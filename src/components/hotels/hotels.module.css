@@ -1,0 +1,28 @@
+.hotels {
+	max-width: 1920px;
+	margin: auto;
+	padding: 25px 0;
+}
+
+.title {
+	max-width: 1780px;
+	/* margin: auto; */
+	margin-bottom: 15px;
+	margin-left: clamp(15px, 3vw, 20px);
+}
+
+.empty {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	margin: auto;
+}
+
+@media screen and (max-width: 834px) {
+	.title {
+		/* 	width: 99%;
+		margin-left: auto;
+		padding-left: clamp(12px, 2vw, 26px); */
+	}
+}

@@ -1,0 +1,297 @@
+.destinations {
+	max-width: 1920px;
+	margin: auto;
+	padding: 25px 0;
+}
+
+.container {
+	padding: 0 clamp(20px, 4vw, 60px);
+	margin: auto;
+}
+
+.destination {
+	display: grid;
+	grid-template-columns: minmax(500px, 1fr) 1fr 1fr;
+	align-items: center;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 20px 0;
+	width: 100%;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.title {
+	font-family: "ManropeSB";
+	font-size: clamp(2rem, 1.8096rem + 0.3670vw, 2.25rem);
+	max-width: clamp(300px, 10vw, 470px);
+}
+
+.image {
+	width: 100px;
+	height: 140px;
+	border-radius: 40px;
+	overflow: hidden;
+}
+
+.image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.info {
+	display: flex;
+	justify-self: center;
+}
+
+.tours,
+.cities,
+.hotels {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.subtitle {
+	font-family: "ManropeReg";
+	font-size: 14px;
+	color: #616161;
+}
+
+.quantity {
+	font-family: "ManropeMed";
+	font-size: clamp(1.25rem, 1.3096rem + 0.3670vw, 1.75rem);
+}
+
+.tours {
+	padding-right: clamp(25px, 1.7vw, 32px);
+}
+
+.cities {
+	padding: 0 clamp(25px, 1.7vw, 32px);
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+}
+
+.hotels {
+	padding-left: clamp(25px, 1.7vw, 32px);
+}
+
+.link {
+	justify-self: end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: clamp(63px, 5vw, 80px);
+	aspect-ratio: 1;
+	border: 1px solid #cfcfcf;
+	border-radius: clamp(11px, 1vw, 26px);
+}
+
+.link svg {
+	width: clamp(37px, 3vw, 48px);
+	height: clamp(29px, 2.5vw, 34px);
+}
+
+.slick-arrow {
+	position: absolute;
+	top: calc(18.376rem - clamp(9.063rem, 8.8710rem + 0.3683vw, 9.313rem));
+	right: 16%;
+	/* right: clamp(100px, 18vw, 330px); */
+	width: clamp(63px, 5vw, 80px);
+	aspect-ratio: 1;
+	/* padding: 8px 37px; */
+	border: 1px solid #c7c7c7;
+	outline-offset: -1px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.slick-prev {
+	transform: rotate(90deg) translate(-49%, 0%);
+	border-right: none;
+	border-top-left-radius: clamp(11px, 1vw, 20px);
+	border-bottom-left-radius: clamp(11px, 1vw, 20px);
+}
+
+.slick-next {
+	transform: rotate(90deg) translate(50%, 0%);
+	border-left: none;
+	border-top-right-radius: clamp(11px, 1vw, 20px);
+	border-bottom-right-radius: clamp(11px, 1vw, 20px);
+}
+
+.slick-prev svg,
+.slick-next svg {
+	width: clamp(37px, 3vw, 48px);
+	height: clamp(29px, 2.5vw, 34px);
+	fill: #c7c7c7;
+}
+
+.slick-prev svg {
+	transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1330px) {
+	.slick-arrow {
+		right: 12%;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.slick-arrow {
+		right: 60%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.destination {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.container {
+		padding: 0 clamp(15px, 3vw, 20px);
+		margin: auto;
+	}
+
+	.info {
+		justify-self: flex-end;
+	}
+
+	.link {
+		display: none;
+	}
+
+	.slick-arrow {
+		right: 50%;
+	}
+}
+
+@media screen and (max-width: 940px) {
+
+	.destination {
+		grid-template-columns: 1fr 63px;
+	}
+
+	.name {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		justify-content: start;
+		row-gap: 0px;
+	}
+
+	.title {
+		max-width: 100%;
+	}
+
+	.image {
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.info {
+		justify-self: start;
+	}
+
+	.subtitle {
+		font-size: 12px;
+	}
+
+	.quantity {
+		font-size: clamp(1rem, 0.8710rem + 0.6452vw, 1.25rem);
+	}
+
+	.link {
+		display: flex;
+	}
+
+	.slick-arrow {
+		left: clamp(186px, 66vw, 606px);
+		right: auto;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.destination {
+		grid-template-columns: 1fr;
+	}
+
+	.name {
+		grid-template-columns: clamp(4.6rem, 3.2800rem + 6.6000vw, 6.25rem) 1fr;
+	}
+
+	.title {
+		font-size: clamp(1.25rem, 0.6500rem + 3.0000vw, 2rem);
+	}
+
+	.image {
+		width: clamp(4.6rem, 3.2800rem + 6.6000vw, 6.25rem);
+		/* height: clamp(7.5rem, 6.5000rem + 5.0000vw, 8.75rem); */
+		height: auto;
+		aspect-ratio: 0.71;
+		border-radius: 30px;
+	}
+
+	.tours {
+		padding-right: clamp(15px, 3vw, 25px);
+	}
+
+	.cities {
+		padding: 0 clamp(15px, 3vw, 25px);
+	}
+
+	.hotels {
+		padding-left: clamp(15px, 3vw, 25px);
+	}
+
+	.link {
+		display: none;
+	}
+
+	.slick-arrow {
+		left: auto;
+		right: 0%;
+		width: clamp(40px, 9vw, 63px);
+	}
+
+	.slick-prev svg,
+	.slick-next svg {
+		width: clamp(20px, 5vw, 33px);
+		height: auto;
+		aspect-ratio: 1.5;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.name {
+		column-gap: clamp(15px, 5vw, 40px);
+	}
+
+	.tours {
+		padding-right: clamp(10px, 2.8vw, 15px);
+	}
+
+	.cities {
+		padding: 0 clamp(10px, 2.8vw, 15px);
+	}
+
+	.hotels {
+		padding-left: clamp(10px, 2.8vw, 15px);
+	}
+}
+
+@media screen and (max-width: 420px) {
+
+	.tours,
+	.cities,
+	.hotels {
+		align-items: center;
+	}
+}

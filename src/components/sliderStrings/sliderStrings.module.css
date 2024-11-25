@@ -1,0 +1,27 @@
+.slider {
+	width: 100%;
+	height: 130px;
+	z-index: 2;
+}
+
+.slide {
+	position: relative;
+	/* font-size: clamp(32px, 7vw, 64px); */
+	font-size: clamp(2.625rem, 1.4366rem + 5.0704vw, 6rem);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 0 20px;
+	height: 130px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	word-wrap: normal;
+}
+
+@media screen and (max-width:834px) {
+	.slide {
+		font-size: clamp(1.8rem, 0.6645rem + 5.6774vw, 4rem);
+	}
+}

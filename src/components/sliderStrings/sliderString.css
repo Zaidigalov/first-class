@@ -1,0 +1,30 @@
+.rent-slider .slick-slide a,
+.cities-slider .slick-slide a {
+	transition: font-size 0.15s ease-out, opacity 0.1s 0.1s;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.rent-slider .slick-slide a:hover,
+.cities-slider .slick-slide a:hover {
+	transition: font-size 0.15s ease-out, opacity 0.1s 0.1s;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.rent-slider .slick-center *,
+.cities-slider .slick-center * {
+	font-size: clamp(2.625rem, 1.4366rem + 5.0704vw, 6rem);
+	transition: font-size 0.25s ease-out;
+	text-align: center;
+}
+
+.rent-slider .slick-slide:not(.slick-current) a,
+.cities-slider .slick-slide:not(.slick-current) a {
+	pointer-events: none;
+}
+
+.rent-slider .cursive,
+.cities-slider .cursive {
+	padding-bottom: 14px;
+}

@@ -1,0 +1,265 @@
+.card {
+	max-width: 639px;
+	width: 100%;
+	aspect-ratio: 0.89;
+	overflow: hidden;
+	padding: 0 clamp(15px, 3vw, 20px);
+	border-right: 1px solid #e3e3e3;
+
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.background {
+	position: absolute;
+	overflow: hidden;
+}
+
+.background img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* filter: brightness(2); */
+}
+
+.button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: clamp(40px, 4vw, 75px);
+	aspect-ratio: 1;
+	border-radius: clamp(11px, 1vw, 20px);
+	cursor: pointer;
+	background-color: white;
+	bottom: clamp(20px, 3vw, 55px);
+}
+
+.button svg {
+	width: clamp(20px, 2.8vw, 48px);
+	/* height: clamp(10px, 2.5vw, 34px); */
+	aspect-ratio: 1;
+}
+
+.title {
+	font-size: clamp(22px, 2.2vw, 36px);
+	position: absolute;
+	bottom: clamp(20px, 3vw, 55px);
+	font-family: "ManropeMed";
+}
+
+
+@media screen and (hover:hover) and (min-width:835px) {
+	.background {
+		width: clamp(90px, 11vw, 190px);
+		aspect-ratio: 0.73;
+		border-radius: clamp(35px, 4vw, 70px);
+		transition: width 0.4s, height 0.4s, border-radius 0.4s, aspect-ratio 0.2s;
+	}
+
+	.title {
+		transition: color 0.3s 0.1s, transform 0.5s, opacity 0.2s, left 0.5s;
+		color: black;
+		text-align: center;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 300px;
+		width: 85%;
+		animation: title 0.4s ease-in-out forwards;
+	}
+
+	.button {
+		opacity: 0;
+		transition: opacity 0.08s, right 0.4s, scale 0.4s;
+		right: 50%;
+		scale: 0;
+	}
+
+	.container:hover .background {
+		width: 100%;
+		aspect-ratio: 0.83;
+		/* height: 100%; */
+		border-radius: clamp(20px, 2.3vw, 28px);
+	}
+
+	.container:hover .title {
+		color: white;
+		transition: color 0.3s 0.1s, transform 0.5s 0.5;
+		transform: translateX(0%);
+		left: clamp(20px, 2.5vw, 55px);
+		animation: title-hover 0.5s ease-in-out forwards;
+		width: 55%;
+	}
+
+	.container:hover .button {
+		opacity: 1;
+		display: flex;
+		transition: opacity 0.5s 0.2s, filter 0.2s, right 0.4s;
+		right: clamp(20px, 2.5vw, 55px);
+		scale: 1;
+	}
+
+	.button:hover {
+		filter: invert(1);
+	}
+
+	@keyframes title-hover {
+		from {
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0
+		}
+
+		to {
+			opacity: 1;
+			text-align: left;
+		}
+	}
+
+	@keyframes title {
+		from {
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0
+		}
+
+		to {
+			opacity: 1;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: 940px) {
+
+		.button {
+			width: clamp(40px, 6vw, 56px);
+			border-radius: clamp(11px, 1vw, 20px);
+			bottom: clamp(20px, 4vw, 30px);
+			right: clamp(20px, 4vw, 30px);
+		}
+
+		.button svg {
+			width: clamp(30px, 4vw, 48px);
+			aspect-ratio: 1;
+		}
+
+		.title {
+			font-size: clamp(22px, 4vw, 32px);
+			bottom: clamp(20px, 4vw, 30px);
+			left: 50%
+		}
+
+		.container:hover .title {
+			left: clamp(20px, 4vw, 30px);
+		}
+
+	}
+
+}
+
+@media screen and (hover:none) and (min-width:835px) {
+
+	.background {
+		width: 100%;
+		height: 100%;
+		border-radius: clamp(20px, 2.3vw, 28px);
+	}
+
+	.title {
+		color: white;
+		transition: color 0.3s 0.1s, transform 0.5s 0.5;
+		transform: translateX(0%);
+		left: clamp(20px, 2.5vw, 55px);
+		animation: title-hover 0.5s ease-in-out forwards;
+		width: 55%;
+	}
+
+	.button {
+		opacity: 1;
+		transition: opacity 0.5s 0.2s, filter 0.2s, right 0.4s;
+		right: clamp(20px, 2.5vw, 55px);
+		scale: 1;
+	}
+
+	@media screen and (max-width: 940px) {
+		.button {
+			width: clamp(40px, 6vw, 56px);
+			border-radius: clamp(11px, 1vw, 20px);
+			bottom: clamp(20px, 4vw, 30px);
+			right: clamp(20px, 4vw, 30px);
+		}
+
+		.button svg {
+			width: clamp(30px, 4vw, 48px);
+			aspect-ratio: 1;
+		}
+
+		.title {
+			font-size: clamp(22px, 4vw, 36px);
+			bottom: clamp(20px, 4vw, 30px);
+			left: clamp(20px, 4vw, 30px);
+		}
+	}
+}
+
+@media screen and (max-width:834.999px) {
+
+	.container {
+		justify-content: space-between;
+		align-items: end;
+		padding: clamp(20px, 3vw, 25px);
+	}
+
+	.background {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: clamp(20px, 2.3vw, 28px);
+	}
+
+	.title {
+		position: static;
+		color: white;
+		transform: translateX(0%);
+		width: 65%;
+		line-height: normal;
+		font-size: clamp(18px, 3.5vw, 26px);
+	}
+
+	.button {
+		position: static;
+		width: clamp(36px, 6.5vw, 40px);
+	}
+}
+
+@media screen and (max-width:560px) {
+
+	.container {
+		padding: clamp(20px, 6vw, 25px);
+	}
+
+	.title {
+		width: 65%;
+		font-size: clamp(18px, 7vw, 32px);
+	}
+
+	.button {
+		width: clamp(36px, 12vw, 55px);
+	}
+
+	.button svg {
+		width: clamp(20px, 7vw, 33px);
+	}
+}

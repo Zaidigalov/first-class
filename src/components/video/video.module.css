@@ -1,0 +1,96 @@
+.video-container {
+	position: relative;
+	width: 100%;
+	max-width: 1880px;
+	height: 100svh;
+	max-height: 1080px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 64px;
+}
+
+.media {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	border-radius: 120px;
+	object-fit: cover;
+	transition: clip-path 2s;
+	z-index: -1;
+	filter: saturate(1.2);
+}
+
+.video1 {
+	clip-path: inset(20% 70% 20% 7% round 120px);
+}
+
+.video2 {
+	clip-path: inset(20% 38.5% 20% 38.5% round 120px);
+}
+
+.video3 {
+	clip-path: inset(20% 7% 20% 70% round 120px);
+}
+
+.video1.video_showed {
+	clip-path: inset(0% 0% 0% 0% round 120px);
+}
+
+.video2.video_showed {
+	clip-path: inset(0% 0% 0% 0% round 120px);
+}
+
+.video3.video_showed {
+	clip-path: inset(0% 0% 0% 0% round 120px);
+}
+
+.video-button {
+	margin-left: 500px;
+	background-color: aqua;
+	height: 100px;
+	width: 300px;
+}
+
+.title {
+	animation: show 1.5s linear 2s forwards;
+	opacity: 0;
+	color: white;
+	font-size: 94px;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.button {
+	width: 140px;
+	height: 55px;
+	border-radius: 30px;
+	font-family: ManropeMed;
+	font-size: 17px;
+	opacity: 0;
+	animation: show 1.5s linear 2.5s forwards;
+	transition: background-color 0.2s, color 0.2s;
+	color: white;
+
+	background-color: rgb(255 255 255 / 20%);
+	backdrop-filter: blur(5px) saturate(110%);
+	-webkit-backdrop-filter: blur(5px) saturate(110%);
+}
+
+.button:hover {
+	background-color: white;
+	color: black;
+}

@@ -1,0 +1,125 @@
+@font-face {
+	font-family: 'ManropeLight';
+	src: local('Manrope-Light'),
+		url('./fonts/Manrope-Light.woff') format('woff'),
+		url('./fonts/Manrope-Light.woff2') format('woff2'),
+		url('./fonts/Manrope-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ManropeReg';
+	src: local('Manrope-Regular'),
+		url('./fonts/Manrope-Regular.woff') format('woff'),
+		url('./fonts/Manrope-Regular.woff2') format('woff2'),
+		url('./fonts/Manrope-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ManropeMed';
+	src: local('Manrope-Medium'),
+		url('./fonts/Manrope-Medium.woff') format('woff'),
+		url('./fonts/Manrope-Medium.woff2') format('woff2'),
+		url('./fonts/Manrope-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ManropeSB';
+	src: local('Manrope-SemiBold'),
+		url('./fonts/Manrope-SemiBold.woff') format('woff'),
+		url('./fonts/Manrope-SemiBold.woff2') format('woff2'),
+		url('./fonts/Manrope-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ManropeBold';
+	src: local('Manrope-Bold'),
+		url('./fonts/Manrope-Bold.woff') format('woff'),
+		url('./fonts/Manrope-Bold.woff2') format('woff2'),
+		url('./fonts/Manrope-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PlayfairDisplaySC-Italic';
+	src: local('PlayfairDisplaySC-Italic'),
+		url('./fonts/PlayfairDisplaySC-Italic.woff') format('woff'),
+		url("./fonts/PlayfairDisplaySC-Italic.woff2") format('woff2'),
+		url('./fonts/PlayfairDisplaySC-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* @font-face {
+	font-family: 'PlayfairILow';
+	src: local('PlayfairDisplay-Italic'), url("./fonts/PlayfairDisplay-Italic.woff") format('woff');
+} */
+
+html {
+	min-height: 100svh;
+}
+
+body {
+	background-color: #fff;
+	scroll-behavior: smooth;
+	min-height: 100svh;
+}
+
+#root {
+	height: 100%;
+	font-family: Manrope, Arial, Helvetica, sans-serif;
+	flex-basis: 100%;
+	max-width: 1920px;
+	width: 100%;
+	margin: auto;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.title {
+	font-size: clamp(2.25rem, -1.2500rem + 4.3750vw, 4rem);
+	font-weight: 600;
+	font-family: "ManropeReg";
+	text-transform: uppercase;
+	cursor: default;
+}
+
+.cursive {
+	font-weight: 400;
+	text-transform: uppercase;
+	font-family: PlayfairDisplaySC-Italic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
+.button {
+	background-color: #fff;
+	/* height: clamp(40px, 7vw, 80px); */
+	border: none;
+	border-radius: 60px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'ManropeSB';
+}
+
+.slider-small {
+	.slick-current {
+		border-left: 1px solid #e3e3e3;
+	}
+}

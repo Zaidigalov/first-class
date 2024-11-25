@@ -1,0 +1,55 @@
+.shedule {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas:
+		"days description"
+		"destination description";
+	max-width: 1920px;
+	padding: 100px;
+	row-gap: 23px;
+	column-gap: clamp(12.5rem, -14.5522rem + 34.6269vw, 27rem);
+	margin: auto;
+}
+
+.days {
+	grid-area: days;
+	align-self: end;
+}
+
+.destination {
+	grid-area: destination;
+	font-size: 28px;
+	font-family: Manrope;
+}
+
+.description {
+	grid-area: description;
+	justify-self: end;
+	align-self: center;
+	font-family: ManropeReg;
+	font-size: 24px;
+	color: #666666;
+	line-height: 146%;
+}
+
+@media screen and (max-width:1250px) {
+	.shedule {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"days"
+			"destination"
+			"description";
+
+		row-gap: clamp(0.875rem, 0.6599rem + 1.0753vw, 1.5rem);
+		padding: clamp(0.938rem, -0.8898rem + 9.1389vw, 6.25rem);
+	}
+
+	.destination {
+		font-size: clamp(1rem, 0.7419rem + 1.2903vw, 1.75rem)
+	}
+
+	.description {
+		font-size: clamp(0.875rem, 0.6599rem + 1.0753vw, 1.5rem)
+	}
+}

@@ -1,0 +1,281 @@
+.card {
+	width: clamp(36.5rem, -2.5000rem + 49vw, 57.5rem);
+	/* width: 920px; */
+	aspect-ratio: 1.2;
+	overflow: hidden;
+	/* padding: 0 clamp(15px, 3vw, 20px); */
+	color: white;
+	cursor: grab;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	border-radius: clamp(1.25rem, -1.7500rem + 3.7500vw, 2.75rem);
+	overflow: hidden;
+	padding: clamp(30px, 3vw, 40px) clamp(20px, 2.8vw, 40px);
+}
+
+/* .without-button {
+	padding-bottom: 56px;
+} */
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+.background-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: scale 0.8s, transform 0.2s;
+	scale: 1;
+}
+
+
+
+@media screen and (hover:hover) {
+	.card:hover .background-image {
+		scale: 1.2;
+		transition: scale 0.8s, transform 0.2s linear;
+	}
+}
+
+.header {
+	display: flex;
+	align-self: flex-end;
+}
+
+.tags {
+	display: flex;
+	gap: 20px;
+}
+
+.tag {
+	font-family: ManropeMed;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 0px 43px;
+	height: clamp(40px, 7vw, 80px);
+}
+
+.icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	padding: 18px;
+}
+
+.icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.footer {}
+
+.title {
+	font-size: clamp(2.4rem, -0.8000rem + 4.0000vw, 4rem);
+	font-family: ManropeSB;
+	margin-bottom: 5px;
+}
+
+.description {
+	font-size: clamp(1.25rem, -0.2500rem + 1.8750vw, 2rem);
+	font-family: ManropeReg;
+	margin-bottom: 0px;
+	/* line-height: 48px; */
+	line-height: 138%;
+	max-height: 0px;
+	opacity: 0;
+	transition: max-height 0.2s, opacity 0.3s, margin-bottom 0.35s;
+	overflow-y: hidden;
+}
+
+@supports (-moz-appearance: none) {
+	.description {
+		scrollbar-width: thin;
+		scrollbar-color: #d4d4d4 #f4f4f4;
+	}
+}
+
+/* Для Chrome, Safari и других WebKit-браузеров */
+.description::-webkit-scrollbar {
+	width: 5px;
+	/* ширина полосы прокрутки */
+}
+
+.description::-webkit-scrollbar-track {
+	background: #e7e7e75a;
+	/* цвет фона полосы прокрутки */
+	border-radius: 15px;
+	/* Скругление углов трека */
+}
+
+.description::-webkit-scrollbar-thumb {
+	background-color: #f4f4f4;
+	/* цвет ползунка */
+	border-radius: 15px;
+	/* закругление углов ползунка */
+}
+
+.button {
+	padding: 0;
+	width: 100%;
+	height: clamp(40px, 7vw, 80px);
+	background-color: white;
+	border: none;
+	border-radius: 60px;
+	font-size: 24px;
+	font-family: ManropeMed;
+	max-height: 0px;
+	scale: 0;
+	opacity: 0;
+	margin-top: 0;
+	overflow: hidden;
+	transition: max-height 0.2s, opacity 0.2s, background-color 0.2s, color 0.2s, scale 0.2s, margin-top 0.35s;
+	text-transform: uppercase;
+}
+
+@media (hover:hover) {
+	.button:hover {
+		background-color: black;
+		color: white;
+	}
+
+	.card:hover .button {
+		max-height: 80px;
+		opacity: 1;
+		scale: 1;
+		margin-top: clamp(26px, 2.5vw, 48px);
+		transition: max-height 0.2s ease-in-out, opacity 0.1s 0.1s, background-color 0.2s, color 0.2s, scale 0.2s, margin-top 0.2s;
+	}
+
+	.card:hover .description {
+		max-height: 480px;
+		/* margin-bottom: clamp(26px, 2.5vw, 48px); */
+		opacity: 1;
+		transition: max-height 0.4s ease-in-out, opacity 0.2s 0.1s, margin-bottom 0.2s;
+		animation: overflow 1s forwards;
+	}
+
+
+}
+
+@media screen and (max-width: 1250px) {
+	/* .card {
+		width: clamp(500px, 80vw, 880px);
+	}
+
+	.description {
+		font-size: clamp(1rem, 0.7935rem + 1.2vw, 1.6rem);
+	} */
+}
+
+@media screen and (max-width:835px) {
+
+	.card {
+		width: 100%;
+		max-width: none;
+	}
+
+	.tag {
+		font-size: clamp(16px, 3vw, 24px);
+		padding: 0px clamp(20px, 5.8vw, 43px);
+	}
+
+	.title {
+		font-size: clamp(28px, 7.6vw, 48px);
+	}
+
+	.button {
+		font-size: clamp(16px, 3vw, 24px);
+	}
+
+	@media (hover:hover) {
+
+		.card:hover .description {
+			max-height: clamp(320px, 58vw, 480px);
+		}
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.card {
+		border-radius: clamp(20px, 11vw, 40px);
+	}
+
+}
+
+
+@media (hover:hover) {
+	.tag-info {
+		display: none;
+	}
+}
+
+@media (hover:none) {
+	.tag-info {
+		display: flex;
+		padding: 0;
+		aspect-ratio: 1;
+		font-size: 32px;
+		transition: opacity 0.1s;
+	}
+
+	.tag-info:active {
+		opacity: 0.8;
+	}
+
+	.button {
+		max-height: 0px;
+		opacity: 0;
+		margin-top: 0;
+	}
+
+	.description {
+		max-height: 0px;
+		opacity: 0;
+	}
+}
+
+.description-showed {
+	max-height: clamp(320px, 58vw, 480px);
+	opacity: 1;
+	transition: max-height 0.4s ease-in-out, opacity 0.2s 0.1s;
+	animation: overflow 1s forwards;
+}
+
+.button-showed {
+	max-height: 80px;
+	scale: 1;
+	margin-top: clamp(26px, 2.5vw, 48px);
+	opacity: 1;
+	transition: max-height 0.4s ease-in-out, opacity 0.2s 0.1s, background-color 0.2s, color 0.2s, scale 0.2s, margin-top 0.2s;
+}
+
+@keyframes overflow {
+	from {
+		overflow-y: hidden
+	}
+
+	to {
+		overflow-y: auto
+	}
+}

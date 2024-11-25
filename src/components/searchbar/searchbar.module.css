@@ -1,0 +1,70 @@
+.searchbar {
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+	max-width: 1920px;
+	margin: auto;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	max-width: 1900px;
+	margin: auto;
+	padding: 20px clamp(20px, 4vw, 60px);
+}
+
+.title {
+	font-family: "ManropeSB";
+	font-size: clamp(1.25rem, 1.1500rem + 0.5000vw, 1.75rem);
+	color: #616161;
+	margin-right: 45px;
+}
+
+.tags {
+	display: flex;
+	gap: 10px;
+}
+
+.tag {
+	height: 40px;
+	padding: 0 26px;
+	border: 1px solid #e3e3e3;
+	border-radius: 44px;
+	font-family: "ManropeSB";
+	font-size: 20px;
+}
+
+.input-container {
+	position: relative;
+	/* padding-right: 20px;*/
+	max-width: clamp(391px, 25vw, 640px);
+	width: 100%;
+}
+
+.search-button {
+	position: absolute;
+	top: 9px;
+	left: 27px;
+	width: 24px;
+	height: 24px;
+}
+
+.search-button img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.input {
+	width: 100%;
+	height: 40px;
+	padding: 0 26px 0 65px;
+	border: 1px solid #e3e3e3;
+	border-radius: 44px;
+	font-family: "ManropeSB";
+	font-size: clamp(1rem, 0.9500rem + 0.2500vw, 1.25rem);
+}
+
+.input:focus::placeholder {
+	opacity: 0;
+}

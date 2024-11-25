@@ -1,0 +1,104 @@
+.body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 100svh;
+	max-width: 1920px;
+	max-height: 1080px;
+	margin: auto;
+	/* overflow: hidden; */
+	color: white;
+	padding: 220px 165px 54px;
+	width: 100%;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* filter: brightness(0.5); */
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	/* flex-direction: column; */
+	/* justify-content: space-between; */
+	margin-bottom: auto;
+}
+
+.title {
+	grid-area: span 1;
+	font-family: "ManropeReg";
+	margin-bottom: 40px;
+}
+
+.description {
+	grid-area: span 2/1;
+	/* display: flex; */
+	/* width: 740px; */
+}
+
+.text {
+	font-family: "ManropeLight";
+	font-size: 20px;
+	line-height: 160%;
+	margin-bottom: 60px;
+	width: 740px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 220px;
+	height: 60px;
+	border-radius: 60px;
+	color: black;
+	background-color: white;
+	font-family: "ManropeMed";
+	font-size: 24px;
+	transition: color 0.2s, background-color 0.2s;
+}
+
+.button:hover {
+	color: white;
+	background-color: black;
+}
+
+.tags {
+	justify-self: end;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	/* align-self: flex-end; */
+}
+
+.tag {
+	display: flex;
+	gap: 24px;
+	font-family: "ManropeMed";
+	font-size: 24px;
+}
+
+.tag__icon {
+	filter: invert();
+}
+
+.footer {
+	display: flex;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.footer img {
+	filter: invert();
+}

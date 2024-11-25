@@ -1,0 +1,110 @@
+.hero {
+  max-width: 2560px;
+  width: 100%;
+  height: 100vh;
+  max-height: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(15px, 3vw, 20px)
+    /* 25px */
+  ;
+}
+
+@supports(height: 100svh) {
+  .hero {
+    height: 100svh;
+  }
+}
+
+.full {
+  width: 100%;
+  height: 100svh;
+  max-width: 2560px;
+  max-height: 1180px;
+  border-radius: 0;
+  padding: 0 0
+    /* 25px */
+  ;
+}
+
+.full .container {
+  width: 100%;
+  height: 100svh;
+  max-width: none;
+  max-height: 1180px;
+  border-radius: 0;
+  border-radius: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
+  border-radius: 44px;
+  overflow: hidden;
+  padding: 0 clamp(30px, 5vw, 70px);
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  position: relative;
+  color: #ffffff;
+  font-size: clamp(4rem, 0.0000rem + 5.0000vw, 6rem);
+  max-width: 1000px;
+  text-align: center;
+  line-height: 115%;
+  word-wrap: normal;
+  font-weight: 600;
+  font-family: "ManropeReg";
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 139px;
+  height: clamp(40px, 5vw, 55px);
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  font-size: 17px;
+  z-index: 0;
+}
+
+@media screen and (max-width:1280px) {
+  .title {
+    font-size: clamp(2.625rem, 2.1667rem + 2.2917vw, 4rem);
+  }
+}
+
+
+@media screen and (max-width:420px) {
+  .hero {
+    padding: 0;
+  }
+
+  .container {
+    border-radius: 0;
+  }
+}
+
+@media screen and (hover:hover) {
+  .button:hover {
+    filter: invert(1);
+  }
+}

@@ -1,0 +1,62 @@
+.container {
+	max-width: clamp(68.75rem, 6.2500rem + 78.1250vw, 100rem);
+	margin: auto;
+	padding: clamp(2rem, 0.7250rem + 6.3750vw, 8.375rem) clamp(15px, 3vw, 20px) 0;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	font-family: ManropeReg;
+	font-size: clamp(1rem, 0.8500rem + 0.7500vw, 1.75rem);
+	margin-bottom: 32px;
+}
+
+.chapter {
+	margin-bottom: clamp(2rem, 1.4000rem + 3.0000vw, 5rem);
+}
+
+.title {
+	font-family: ManropeBold;
+	font-size: clamp(1rem, 0.8500rem + 0.7500vw, 1.75rem);
+	margin-bottom: 32px;
+	text-transform: uppercase;
+}
+
+b {
+	font-family: ManropeBold;
+}
+
+a {
+	overflow-wrap: break-word;
+}
+
+.paragraph {
+	font-family: ManropeReg;
+	font-size: clamp(1rem, 0.8500rem + 0.7500vw, 1.75rem);
+	margin-bottom: 32px;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.list-title {
+	margin-bottom: 0;
+}
+
+.number {
+	font-family: ManropeBold;
+}
+
+.list {
+	list-style: disc;
+	padding-left: clamp(1.125rem, 0.7874rem + 1.6880vw, 2.813rem);
+	line-height: normal;
+	margin-bottom: 32px;
+}
+
+.list-item {
+	font-family: ManropeReg;
+	font-size: clamp(1rem, 0.8500rem + 0.7500vw, 1.75rem);
+	text-transform: uppercase;
+}

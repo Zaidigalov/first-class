@@ -1,0 +1,48 @@
+.runline__item .cursive {
+	font-size: clamp(1.8rem, 0.6645rem + 5.6774vw, 4rem);
+	line-height: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-family: PlayfairI, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	margin: 7px;
+}
+
+.runline {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	background-color: var(--yellow);
+	padding-top: 3px;
+	max-width: 1920px;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0;
+}
+
+.runline__container {
+	display: flex;
+}
+
+.runline__item {
+	font-size: clamp(1.8rem, 0.6645rem + 5.6774vw, 4rem);
+	font-weight: 600;
+	font-family: ManropeSB, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	text-transform: uppercase;
+	white-space: nowrap;
+	flex-shrink: 0;
+	animation: runline 15s linear infinite;
+	margin: 0;
+	padding: 0;
+	padding-right: 50px;
+	display: inline;
+}
+
+/* @keyframes runline {
+	0% {
+		transform: translateZ(0);
+	}
+
+	to {
+		transform: translate3d(-99.99%, 0, 0);
+	} 
+}*/

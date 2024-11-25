@@ -1,0 +1,233 @@
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1920px;
+	margin: auto;
+	padding-left: clamp(15px, 1.5vw, 20px);
+	padding-right: clamp(15px, 1.5vw, 20px);
+	padding-top: clamp(2.5rem, 1.7500rem + 3.7500vw, 6.25rem);
+
+	/* height: 100%; */
+}
+
+.inner-container {
+	max-width: 1780px;
+	width: 100%;
+}
+
+.form-button {
+	position: relative;
+	align-self: end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d9d9d9;
+	width: 55px;
+	border-radius: 60px;
+	height: 40px;
+	transition: filter 0.2s;
+	margin-right: 70px;
+}
+
+.close-slice {
+	position: absolute;
+	width: 22px;
+	height: 3px;
+	border-radius: 3px;
+	background-color: black;
+}
+
+.close-left {
+	transform: rotate(-45deg);
+}
+
+.close-right {
+	transform: rotate(45deg);
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 60px;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+
+.field-attach {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.label {
+	font-size: clamp(0.875rem, 0.8124rem + 0.3130vw, 1.188rem);
+	margin-bottom: 10px;
+}
+
+.input {
+	height: 25px;
+	border-bottom: 1px solid #e0e0e0;
+	font-size: clamp(0.875rem, 0.8124rem + 0.3130vw, 1.188rem);
+	outline: none;
+}
+
+.field-attach {
+	padding-bottom: 25px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.field-attach .label {
+	margin-left: 30px;
+	position: relative;
+}
+
+.field-attach .label::before {
+	position: absolute;
+	content: '';
+	left: -30px;
+	display: block;
+	width: 20px;
+	height: 30px;
+	background: url(./images/icons/paper-clip.svg) no-repeat;
+}
+
+.input-attach {
+	display: none;
+}
+
+.field-comment {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	margin-bottom: clamp(1rem, 0.8000rem + 1.0000vw, 2rem);
+}
+
+.input-comment {
+	width: 100%;
+	height: clamp(3.125rem, 1.8700rem + 6.2750vw, 9.4rem);
+	resize: none;
+	font-family: inherit;
+}
+
+.field-checkbox {
+	position: relative;
+	justify-self: start;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	flex-direction: row;
+}
+
+.field-checkbox .label {
+	/* margin-left: 30px; */
+}
+
+.input-checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.input-checkbox+label {
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+}
+
+.input-checkbox+label::before {
+	content: '';
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	border: 1px solid #adb5bd;
+	border-radius: 50%;
+	margin-right: 15px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50% 50%;
+}
+
+.input-checkbox:checked+label::before {
+	border-color: black;
+	background-color: black;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.invitation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	width: 300px;
+	height: clamp(3.4rem, 3.1167rem + 0.9444vw, 4.25rem);
+	border-radius: 40px;
+	background-color: black;
+	color: white;
+	transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.invitation img {
+	transition: filter 0.2s;
+	filter: invert(1);
+}
+
+.invitation p {
+	font-size: clamp(1.25rem, 0.9100rem + 1.0750vw, 2.2rem);
+}
+
+.invitation img {
+	width: clamp(1.3rem, 0.9500rem + 0.8750vw, 2rem);
+}
+
+@media screen and (hover:hover) {
+
+	.invitation:hover {
+		background-color: white;
+		color: black;
+		border: 1px, solid #858585;
+	}
+
+	.invitation:hover img {
+		filter: invert(0);
+	}
+}
+
+@media screen and (max-width:720px) {
+
+	.form {
+		grid-template-columns: 1fr;
+		column-gap: 0px;
+	}
+
+	.field-attach {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.field-comment {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.field-checkbox {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.invitation {
+		justify-self: center;
+	}
+
+}
+
+@media screen and (max-width:480px) {
+
+	.invitation {
+		width: 100%;
+	}
+
+}

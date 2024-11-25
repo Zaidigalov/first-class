@@ -1,0 +1,68 @@
+.countries {
+	max-width: 1920px;
+	width: 100%;
+	height: clamp(59rem, 52.4724rem + 12.5230vw, 67.5rem);
+	margin: auto;
+	/* margin-bottom: 60px; */
+	padding: 0 clamp(15px, 3vw, 20px);
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 44px;
+	overflow: hidden;
+	gap: 29px;
+	color: white;
+}
+
+.background {
+	width: 100%;
+	height: clamp(59rem, 52.4724rem + 12.5230vw, 67.5rem);
+}
+
+.background img,
+.background-single img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slider {
+	width: 100%;
+	z-index: 2;
+}
+
+.slider-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.background-single {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.name {
+	font-size: clamp(2.625rem, 1.4366rem + 5.0704vw, 6rem);
+	text-transform: uppercase;
+}
+
+@media screen and (max-width: 834.99px) {
+
+	.countries,
+	.background {
+		height: clamp(37.5rem, 24.1148rem + 66.9261vw, 59rem);
+	}
+}

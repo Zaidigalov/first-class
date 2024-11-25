@@ -1,0 +1,350 @@
+.slider-container {
+	max-width: 1920px;
+	margin: auto;
+	padding-top: 10px;
+	padding: 35px 0 20px;
+	/* margin-bottom: 40px; */
+	/* padding: 0 clamp(15px, 3vw, 20px); */
+}
+
+.slick-track {
+	position: relative;
+	top: 0;
+	left: 0;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-title {
+	margin-bottom: clamp(20px, 2.8vw, 35px);
+	padding: 0 clamp(15px, 3vw, 20px);
+}
+
+.slick-list {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	/* left: -46px; */
+}
+
+.slick-arrow {
+	position: absolute;
+	top: -26px;
+	right: 3px;
+	transform: translateY(-100%);
+	width: clamp(63px, 5vw, 80px);
+	aspect-ratio: 1;
+	place-content: center;
+	align-items: center;
+	/* padding: 8px 37px; */
+	outline: solid 1px #000;
+	outline-offset: -1px;
+	border-radius: clamp(11px, 1vw, 26px);
+	cursor: pointer;
+	margin-right: clamp(15px, 3vw, 20px);
+}
+
+.slick-next,
+.slick-prev {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slick-next svg,
+.slick-prev svg {
+	width: clamp(37px, 3vw, 48px);
+	height: clamp(29px, 2.5vw, 34px);
+}
+
+.slick-prev {
+	right: clamp(85px, 7vw, 100px);
+}
+
+.slick-prev svg {
+	transform: rotate(180deg);
+}
+
+.slider__navigation {
+	position: absolute;
+	top: 1.5%;
+	left: 80%;
+	display: flex;
+	gap: 22px;
+}
+
+.sliderNavigation__button {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	place-content: center;
+	align-items: center;
+	padding: 8px 37px;
+	outline: solid 1px #000;
+	outline-offset: -1px;
+	border-radius: 20px;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.slide {
+	max-width: 1920px;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 0 clamp(15px, 3vw, 20px);
+}
+
+@supports (-moz-appearance: none) {
+	.slide {
+		scrollbar-width: thin;
+		scrollbar-color: #d4d4d400 #f4f4f400;
+	}
+}
+
+/* Для Chrome, Safari и других WebKit-браузеров */
+.slide::-webkit-scrollbar {
+	width: 0px;
+	/* ширина полосы прокрутки */
+}
+
+.slide::-webkit-scrollbar-track {
+	background: #e7e7e700;
+	/* цвет фона полосы прокрутки */
+	border-radius: 15px;
+	/* Скругление углов трека */
+}
+
+.slide::-webkit-scrollbar-thumb {
+	background-color: #f4f4f400;
+	/* цвет ползунка */
+	border-radius: 15px;
+	/* закругление углов ползунка */
+}
+
+.active-card {
+	max-width: 1160px;
+}
+
+.card {
+	position: relative;
+	max-width: 1160px;
+	width: clamp(15rem, 3.3396rem + 14.9254vw, 21.25rem);
+	height: clamp(580px, 99vw, 840px);
+	border-radius: clamp(40px, 5.8vw, 44px);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: clamp(30px, 3vw, 40px) clamp(20px, 2.8vw, 40px);
+	color: white;
+	/* margin-right: 20px; */
+	transition: width 0.5s;
+}
+
+.without-button {
+	padding-bottom: 56px;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	filter: grayscale(1);
+	transition: filter 0.3s;
+}
+
+.background img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.header {
+	display: flex;
+	align-self: flex-end;
+}
+
+.tags {
+	display: flex;
+	gap: 20px;
+}
+
+.tag {
+	font-family: ManropeMed;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 0px 43px;
+}
+
+.icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	padding: 18px;
+}
+
+.icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: clamp(41.25rem, -17.0522rem + 74.6269vw, 72.5rem);
+	padding: clamp(30px, 3vw, 40px) clamp(20px, 2.8vw, 40px);
+	pointer-events: none;
+}
+
+.title {
+	font-size: clamp(48px, 5.5vw, 64px);
+	font-family: ManropeSB, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	margin-bottom: 5px;
+	/* scale: 0; */
+	opacity: 0;
+	transition: scale 0s, opacity 0s;
+}
+
+.title-vertical {
+	position: absolute;
+	margin: 0;
+	bottom: 50%;
+	left: 50%;
+	transform: rotate(180deg) translate(50%, -50%);
+	opacity: 1;
+	scale: 1;
+	text-align: center;
+	white-space: nowrap;
+	writing-mode: vertical-lr;
+	transition: scale 0s, opacity 0.3s 0.2s;
+	pointer-events: none;
+}
+
+.description {
+	font-size: 40px;
+	font-family: ManropeSB, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	margin-bottom: clamp(26px, 2.5vw, 48px);
+	line-height: normal;
+	/* scale: 0; */
+	opacity: 0;
+	transition: scale 0s, opacity 0s;
+}
+
+.button {
+	padding: 0;
+	width: 100%;
+	height: clamp(40px, 7vw, 80px);
+	background-color: white;
+	border: none;
+	border-radius: 60px;
+	font-size: 24px;
+	font-family: ManropeSB, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	scale: 0;
+	opacity: 0;
+	transition: scale 0.1s, opacity 0.1s, background-color 0.2s, color 0.2s;
+}
+
+@media (hover:hover) {
+	.button:hover {
+		background-color: black;
+		color: white;
+	}
+}
+
+
+.active-card {
+	width: clamp(41.25rem, -17.0522rem + 74.6269vw, 72.5rem);
+}
+
+.active-card .footer {
+	pointer-events: all;
+}
+
+.active-card .background {
+	filter: grayscale(0);
+	transition: filter 0.3s;
+}
+
+.active-card .title {
+	/* font-size: clamp(48px, 5.5vw, 64px); */
+	scale: 1;
+	opacity: 1;
+	transition: scale 0.3s 0.5s, opacity 0.5s 0.3s;
+}
+
+.active-card .title-vertical {
+	opacity: 0;
+	scale: 0.9;
+	transition: scale 0.1s, opacity 0.1s;
+}
+
+.active-card .description {
+	font-size: clamp(1rem, 0.7977rem + 1.0019vw, 2rem);
+	scale: 1;
+	opacity: 1;
+	transition: scale 0.5s 0.5s, opacity 0.5s 0.35s;
+}
+
+.active-card .button {
+	scale: 1;
+	opacity: 1;
+	transition: scale 0.4s 0.1s ease-out, opacity 0.35s 0.35s, background-color 0.2s, color 0.2s;
+}
+
+@media screen and (max-width: 1250px) {
+
+	.active-card .description {
+		font-size: clamp(1rem, 0.7935rem + 1.2vw, 1.6rem);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.slider-container {
+		padding: 0 clamp(15px, 3vw, 20px);
+	}
+
+	.slide {
+		overflow-x: scroll;
+		padding: 0;
+	}
+
+}
+
+@media screen and (max-width: 833.99px) {
+
+	.card {
+		width: 31%;
+	}
+
+	.active-card {
+		width: 100%;
+	}
+
+	.title {
+		font-size: clamp(28px, 7.6vw, 48px);
+	}
+
+	.footer {
+		width: 100%;
+	}
+
+	.button {
+		font-size: clamp(16px, 3vw, 24px);
+	}
+}
