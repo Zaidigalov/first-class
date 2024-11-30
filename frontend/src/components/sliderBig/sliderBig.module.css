@@ -51,40 +51,8 @@
 	transform: rotate(180deg);
 }
 
-/* .slider-arrow-prev,
-.slider-arrow-next {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.slider-arrow-prev svg,
-.slider-arrow-next svg {
-	width: clamp(37px, 3vw, 48px);
-	height: clamp(29px, 2.5vw, 34px);
-}
-
-.slick-prev {
-	right: clamp(85px, 7vw, 100px);
-}
-
-.slick-prev svg {
-	transform: rotate(180deg);
-} */
-
 @media screen and (max-width: 1050px) {
 	.slider-arrows {
 		display: none;
 	}
-}
-
-@media screen and (max-width: 834.999px) {
-	/* 	.slider-container {
-		padding: clamp(12px, 2vw, 26px);
-	} */
-
-	/* .title {
-		width: 99%;
-		margin-left: auto;
-	} */
 }

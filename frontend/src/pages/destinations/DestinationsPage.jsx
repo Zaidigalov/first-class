@@ -1,69 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../common.css";
 import Header from "../../components/header/Header";
 /* import Circle from '../../components/circle/Circle'; */
 import Destinations from "../../components/destinations/Destinations";
 import Runline from "../../components/runline/Runline";
 import Footer from "../../components/footer/Footer";
-
-const properties = {
-  circle: {
-    full: false,
-    title: "",
-    places: {
-      1: ["City 1", "Country 1", "./images/circle/points/kyoto.svg", "../images/ph.jpg"],
-      2: ["City 2", "Country 2", "./images/circle/points/las-vegas.svg", "../images/ph.jpg"],
-      3: ["City 3", "Country 3", "./images/circle/points/maldives.svg", "../images/ph.jpg"],
-      4: ["City 4", "Country 4", "./images/circle/points/kyoto.svg", "../images/ph.jpg"],
-      5: ["City 5", "Country 5", "./images/circle/points/las-vegas.svg", "../images/ph.jpg"],
-      6: ["City 6", "Country 6", "./images/circle/points/maldives.svg", "../images/ph.jpg"],
-    },
-  },
-
-  destinations: {
-    title: "Destinations",
-    isInputExist: true,
-    tags: ["Business", "Family"],
-    destinations: [
-      {
-        title: "Russia",
-        tours: "2",
-        cities: "4",
-        hotels: "5",
-        image: "../images/circle/backgrounds/moscow.jpg",
-        link: "/country",
-      },
-      {
-        title: "Russia",
-        tours: "2",
-        cities: "4",
-        hotels: "5",
-        image: "../images/circle/backgrounds/moscow.jpg",
-        link: "/country",
-      },
-      {
-        title: "Russia",
-        tours: "2",
-        cities: "4",
-        hotels: "5",
-        image: "../images/circle/backgrounds/moscow.jpg",
-        link: "/country",
-      },
-    ],
-  },
-
-  runlineFirst: "Text /cursive text/",
-
-  footer: {
-    color: "#4B4B4B",
-    image: "../images/ph.jpg",
-  },
-};
+import { path } from "../../path";
 
 export default function DestinationsPage() {
+  const [data, setData] = useState(null);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+
+    return () => window.removeEventListener("resize", () => setWidth(window.innerWidth));
+  }, [width]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch(`${path}continents_countries/`);
+
+        if (response.ok) {
+          const result = await response.json();
+          setData(result);
+          /* console.log(result); */
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getData();
+  }, []);
   return (
     <>
-      <Header full={false} transparent={false}></Header>
+      <Header full={false} transparent={false} width={width}></Header>
       {/* <Circle title="" full={false} places={
 				{
 					1: ["Byblos", "Lebanon", "./images/circle/points/byblos.svg", "../images/countries/israel/ByblosLebanon7.6.jpg"],
@@ -74,39 +48,9 @@ export default function DestinationsPage() {
 					6: ["Jerusalem", "Israel", "./images/circle/points/jerusalem.svg", "../images/countries/israel/JerusalemIsr7.5.jpg"],
 				}
 			}></Circle> */}
-      <Destinations
-        title="Destinations"
-        isInputExist={true}
-        tags={["Business", "Family"]}
-        destinations={[
-          {
-            title: "Russia",
-            tours: "2",
-            cities: "4",
-            hotels: "5",
-            image: "../images/circle/backgrounds/moscow.jpg",
-            link: "/country",
-          },
-          {
-            title: "Russia",
-            tours: "2",
-            cities: "4",
-            hotels: "5",
-            image: "../images/circle/backgrounds/moscow.jpg",
-            link: "/country",
-          },
-          {
-            title: "Russia",
-            tours: "2",
-            cities: "4",
-            hotels: "5",
-            image: "../images/circle/backgrounds/moscow.jpg",
-            link: "/country",
-          },
-        ]}
-      ></Destinations>
+      {data && <Destinations title="Destinations" isInputExist={true} tags={""} destinations={data.countries} />}
       <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline>
-      <Footer width={width} color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
+      <Footer width={width} color="#397A9E" image="../images/main-page/main-footer.jpg" />
     </>
   );
 }

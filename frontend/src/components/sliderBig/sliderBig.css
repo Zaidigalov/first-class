@@ -13,40 +13,6 @@
 		background: url(../images/icons/arrow.svg) no-repeat center center;
 	}
 
-	/* 	.swiper-button-next,
-	.swiper-button-prev {
-		position: absolute;
-		top: -26px;
-		right: 3px;
-		transform: translateY(-100%);
-		width: clamp(63px, 5vw, 80px);
-		aspect-ratio: 1;
-		place-content: center;
-		align-items: center;
-		outline: solid 1px #000;
-		outline-offset: -1px;
-		border-radius: clamp(11px, 1vw, 26px);
-		cursor: pointer;
-		margin-right: clamp(15px, 3vw, 20px);
-	}
-
-	.swiper-button-next,
-	.swiper-button-prev {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.swiper-button-next svg,
-	.swiper-button-prev svg {
-		width: clamp(37px, 3vw, 48px);
-		height: clamp(29px, 2.5vw, 34px);
-	}
-
-	.swiper-button-prev {
-		right: clamp(85px, 7vw, 100px);
-	}*/
-
 	.swiper-button-next {
 		transform: rotate(180deg);
 	}
@@ -56,11 +22,6 @@
 	.swiper-button-prev:after {
 		content: '';
 		display: none;
-		/* position: absolute;
-		display: block;
-		width: 60px;
-		height: 60px;
-		background: url(../images/icons/arrow.svg) no-repeat center center; */
 	}
 }
 

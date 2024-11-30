@@ -2,16 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./sliderCardBig.module.css";
 import addNobr from "../../functions/addNobr";
 
-export default function SliderCardBig({ moving, tags, /* tagIcon, */ title, description, /* linkText, */ link, slug, background }) {
+export default function SliderCardBig({ tags, /* tagIcon, */ title, description, /* linkText, */ link, slug, background }) {
   const card = useRef(null);
   const cardBackground = useRef(null);
   const tagArray = tags && [tags];
   /* const [isDetailsShowed, setIsDetailsShowed] = useState(false); */
   const button = link || slug || null;
-
-  /*   useEffect(() => {
-    isDetailsShowed === true && setIsDetailsShowed(moving);
-  }, [moving]); */
 
   let cardOnHover = false;
 
