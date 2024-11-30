@@ -64,7 +64,7 @@ export default function Tour() {
             </div>
           ))}
 
-          <Footer color={data.color_footer} image={data.image_footer} />
+          <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
       )}
     </>

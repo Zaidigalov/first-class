@@ -7,14 +7,13 @@ import styles from "./sliderBig.module.css";
 import "./sliderBig.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 export default function SliderBig({ slides, title, targetLink }) {
   const [moving, setMoving] = useState(false);
   const swiperRef = useRef(null);
-  console.log(swiperRef);
   const handleNext = () => {
     swiperRef.current.swiper.slideNext(); // Метод для перехода к следующему слайду
   };
@@ -102,16 +101,28 @@ export default function SliderBig({ slides, title, targetLink }) {
         onInit={(swiper) => {
           swiperRef.current = swiper; // Сохраняем ссылку на Swiper
         }}
-        speed={1000}
+        speed={700}
         loop={true}
         className={`${styles.swiper} slider-big`}
-        slidesPerView={2}
+        /* slidesPerView={2} */
+        slidesPerView={1}
+        freeMode={false}
         spaceBetween={21}
         navigation={{
-          nextEl: ".slider-arrow-prev",
-          prevEl: ".slider-arrow-next",
+          nextEl: ".slider-arrow-next",
+          prevEl: ".slider-arrow-prev",
         }}
-        modules={[Navigation]}
+        modules={[Navigation, FreeMode]}
+        breakpoints={{
+          834: {
+            slidesPerView: "auto",
+            freeMode: true,
+          },
+          1250: {
+            slidesPerView: 2,
+            freeMode: false,
+          },
+        }}
       >
         {slides.map((item, index) => {
           return (

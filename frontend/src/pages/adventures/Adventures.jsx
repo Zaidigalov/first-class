@@ -79,7 +79,7 @@ export default function Adventures() {
         }}
       ></Circle> */}
       {/* <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline> */}
-      <Footer color="#397b9e" image="../images/adventures/adventures-footer.jpg" />
+      <Footer width={width} color="#397b9e" image="../images/adventures/adventures-footer.jpg" />
     </>
   );
 }

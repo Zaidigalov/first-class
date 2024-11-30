@@ -1,5 +1,5 @@
 .slider-big {
-
+	overflow: hidden !important;
 
 	.swiper-button-next,
 	.swiper-button-prev {
@@ -61,5 +61,11 @@
 		width: 60px;
 		height: 60px;
 		background: url(../images/icons/arrow.svg) no-repeat center center; */
+	}
+}
+
+@media screen and (max-width:1250px) and (min-width:835px) {
+	.swiper-slide {
+		width: auto !important;
 	}
 }

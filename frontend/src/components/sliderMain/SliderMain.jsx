@@ -8,7 +8,7 @@ import SliderCardMain from "../sliderCardMain/SliderCardMain";
 export default function SliderMain({ slides, title, width }) {
   const sliderRef = useRef(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const scrollContainer = sliderRef.current; // Замените на ваш селектор
 
     let isScrolling = false;
@@ -49,7 +49,7 @@ export default function SliderMain({ slides, title, width }) {
       }
     }
   }, []);
-
+ */
   return (
     <section className={styles.slider}>
       <h2 className={`${styles["main-title"]} title`} dangerouslySetInnerHTML={{ __html: cursivingText(title) }}></h2>

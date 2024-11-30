@@ -1,27 +1,30 @@
-.swiper {
-	max-height: 100vh;
-	overflow: visible;
-	/* overflow-x: visible !important;
-	overflow-y: hidden !important; */
-}
+.slider-menu {
 
-.swiper-slide div[class*="slide-container"] {
-	transition: opacity 1s, filter 1s;
+	.swiper {
+		max-height: 100vh;
+		overflow: visible;
+		/* overflow-x: visible !important;
+		overflow-y: hidden !important; */
+	}
 
-}
+	.swiper-slide div[class*="slide-container"] {
+		transition: opacity 1s, filter 1s;
 
-.swiper-slide-prev div[class*="slide-container"],
-.swiper-slide-next div[class*="slide-container"] {
-	opacity: 0.7;
-	filter: blur(7px) grayscale(0.8);
-}
+	}
 
-.swiper-slide h2[class*="title"] {
-	transition: opacity 0.8s 0.3s;
-}
+	.swiper-slide-prev div[class*="slide-container"],
+	.swiper-slide-next div[class*="slide-container"] {
+		opacity: 0.7;
+		filter: blur(7px) grayscale(0.8);
+	}
 
-.swiper-slide-prev h2[class*="title"],
-.swiper-slide-next h2[class*="title"] {
-	opacity: 0;
-	transition: opacity 0.3s;
+	.swiper-slide h2[class*="title"] {
+		transition: opacity 0.8s 0.3s;
+	}
+
+	.swiper-slide-prev h2[class*="title"],
+	.swiper-slide-next h2[class*="title"] {
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
 }

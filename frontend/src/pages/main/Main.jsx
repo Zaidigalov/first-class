@@ -283,7 +283,7 @@ export default function Main() {
         ]}
       ></SliderBig>
       <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline>
-      <Footer color="#397A9E" image="../images/main-page/main-footer.jpg" />
+      <Footer width={width} color="#397A9E" image="../images/main-page/main-footer.jpg" />
     </>
   );
 }

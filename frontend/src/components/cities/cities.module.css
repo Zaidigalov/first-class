@@ -1,5 +1,5 @@
 .countries {
-	max-width: 1920px;
+	max-width: 2560px;
 	width: 100%;
 	height: clamp(59rem, 52.4724rem + 12.5230vw, 67.5rem);
 	margin: auto;

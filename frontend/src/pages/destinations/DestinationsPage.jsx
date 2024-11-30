@@ -106,7 +106,7 @@ export default function DestinationsPage() {
         ]}
       ></Destinations>
       <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline>
-      <Footer color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
+      <Footer width={width} color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
     </>
   );
 }

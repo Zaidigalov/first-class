@@ -60,6 +60,11 @@ export default function Country() {
           {/* <Description title={`Unlocking Your /${data.translations.en.name}/ Visa with /first class/`} text="Navigating the Australian visa application process can be complex, but we're here to help. Learn about the various types of Australia visas, the necessary documents, and the application procedures. Our comprehensive guidance ensures you meet all the requirements and increase your chances of a successful application." /> */}
           {/* <Section_2Tags /> */}
           {/* <Runline text={"Welcome /Line/"} /> */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           {data.cities.length > 0 && <Cities slides={data.cities} />}
 
           {/* <Section_4Pic text="/Hamilton Island/" image="../images/ph.jpg" isButtonExist={true} /> */}
@@ -68,7 +73,7 @@ export default function Country() {
           <SliderBig slides={data.destinations} title={data.translations.en.name} targetLink="/tour/" />
           {/* <Circle full={false} title="" places={data.random_cities} /> */}
 
-          <Footer color={data.color_footer} image={data.image_footer} />
+          <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
       )}
 

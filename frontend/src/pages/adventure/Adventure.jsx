@@ -260,7 +260,7 @@ export default function Adventure() {
 				}
 			}></Circle>
 			<Runline text={"Discover other incredible worlds with /first class/"}></Runline> */}
-      <Footer color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
+      <Footer width={width} color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
     </>
   );
 }

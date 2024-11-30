@@ -2,24 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./sliderCardBig.module.css";
 import addNobr from "../../functions/addNobr";
 
-export default function SliderCardBig({
-  moving,
-  tags,
-  /* tagIcon, */ title,
-  description,
-  /* linkText, */ link,
-  slug,
-  background,
-}) {
+export default function SliderCardBig({ moving, tags, /* tagIcon, */ title, description, /* linkText, */ link, slug, background }) {
   const card = useRef(null);
   const cardBackground = useRef(null);
   const tagArray = tags && [tags];
-  const [isDetailsShowed, setIsDetailsShowed] = useState(false);
+  /* const [isDetailsShowed, setIsDetailsShowed] = useState(false); */
   const button = link || slug || null;
 
-  useEffect(() => {
+  /*   useEffect(() => {
     isDetailsShowed === true && setIsDetailsShowed(moving);
-  }, [moving]);
+  }, [moving]); */
 
   let cardOnHover = false;
 
@@ -47,8 +39,7 @@ export default function SliderCardBig({
       if (!startX || !startY) return;
       let newX = (e.clientX - startX) / -20;
       let newY = (e.clientY - startY) / -50;
-      cardBackground.current.style.transform =
-        "translate(" + newX + "px, " + newY + "px)";
+      cardBackground.current.style.transform = "translate(" + newX + "px, " + newY + "px)";
     };
 
     const handleMouseLeave = () => {
@@ -71,31 +62,23 @@ export default function SliderCardBig({
   }, []);
 
   function showDetails() {
-    setIsDetailsShowed((prev) => !prev);
+    /* setIsDetailsShowed((prev) => !prev); */
   }
 
   return (
-    <div
-      className={`${styles.card} ${!link && styles["without-button"]}`}
-      ref={card}
-    >
+    <div className={`${styles.card} ${!link && styles["without-button"]}`} ref={card}>
       <div className={styles.container}>
         <div className={styles.background}>
-          <img
-            className={styles["background-image"]}
-            src={background}
-            ref={cardBackground}
-            alt=""
-          />
+          <img className={styles["background-image"]} src={background} ref={cardBackground} alt="" />
         </div>
         <div className={styles.header}>
           <div className={styles.tags}>
-            <button
+            {/*  <button
               className={`${styles.tag} ${styles["tag-info"]} button`}
               onClick={showDetails}
             >
               +
-            </button>
+            </button> */}
 
             {tagArray &&
               tagArray.map((tag, index) => (
@@ -110,21 +93,9 @@ export default function SliderCardBig({
         </div>
         <div className={styles.footer}>
           <h3 className={styles.title}>{title}</h3>
-          <p
-            className={`${styles.description} ${
-              isDetailsShowed ? styles["description-showed"] : ""
-            }`}
-            dangerouslySetInnerHTML={
-              description ? { __html: addNobr(description) } : undefined
-            }
-          ></p>
+          <p className={`${styles.description}`} dangerouslySetInnerHTML={description ? { __html: addNobr(description) } : undefined}></p>
           {button && (
-            <a
-              className={`${styles.button} ${
-                isDetailsShowed ? styles["button-showed"] : ""
-              } button`}
-              href={button}
-            >
+            <a className={`${styles.button}  button`} href={button}>
               {"linkText"}
             </a>
           )}

@@ -43,10 +43,7 @@ export default function Menu({ closeOverlay, width }) {
             <button className={`${styles["menu-button"]}`}>
               <img src="../images/icons/change-theme.svg"></img>
             </button>
-            <button
-              className={`${styles["menu-button"]} ${styles["button-close"]}`}
-              onClick={closeOverlay}
-            >
+            <button className={`${styles["menu-button"]} ${styles["button-close"]}`} onClick={closeOverlay}>
               <img src="../images/icons/burger-close.svg" alt="" />
             </button>
           </div>
@@ -55,6 +52,7 @@ export default function Menu({ closeOverlay, width }) {
       <div className={styles.container}>
         <div className={styles["slider-container"]}>
           <Swiper
+            className="slider-menu"
             speed={1000}
             loop={true}
             spaceBetween={230}
@@ -77,10 +75,7 @@ export default function Menu({ closeOverlay, width }) {
               return (
                 <SwiperSlide key={index}>
                   <div className={styles["slide-container"]}>
-                    <div
-                      data-swiper-parallax="-200"
-                      className={styles["title-container"]}
-                    >
+                    <div data-swiper-parallax="-200" className={styles["title-container"]}>
                       <h2
                         className={styles.title}
                         dangerouslySetInnerHTML={{
@@ -105,16 +100,10 @@ export default function Menu({ closeOverlay, width }) {
           <Link to="../" className={`${styles["nav-item"]}`}>
             Destinations
           </Link>
-          <button
-            className={`${styles["nav-item"]}`}
-            onClick={() => switchSlides(servises)}
-          >
+          <button className={`${styles["nav-item"]}`} onClick={() => switchSlides(servises)}>
             Services
           </button>
-          <button
-            className={`${styles["nav-item"]}`}
-            onClick={() => switchSlides(types)}
-          >
+          <button className={`${styles["nav-item"]}`} onClick={() => switchSlides(types)}>
             Adventures
           </button>
           <Link to="../" className={`${styles["nav-item"]}`}>

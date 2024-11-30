@@ -1,9 +1,7 @@
 .card {
-	width: clamp(36.5rem, -2.5000rem + 49vw, 57.5rem);
-	/* width: 920px; */
+	width: clamp(35.5rem, -2.5000rem + 50.5vw, 58.1rem);
 	aspect-ratio: 1.2;
 	overflow: hidden;
-	/* padding: 0 clamp(15px, 3vw, 20px); */
 	color: white;
 	cursor: grab;
 }
@@ -13,16 +11,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	gap: clamp(2.5rem, 1.5401rem + 1.8416vw, 3.75rem);
 	width: 100%;
 	height: 100%;
 	border-radius: clamp(1.25rem, -1.7500rem + 3.7500vw, 2.75rem);
 	overflow: hidden;
 	padding: clamp(30px, 3vw, 40px) clamp(20px, 2.8vw, 40px);
 }
-
-/* .without-button {
-	padding-bottom: 56px;
-} */
 
 .background {
 	position: absolute;
@@ -40,8 +35,6 @@
 	transition: scale 0.8s, transform 0.2s;
 	scale: 1;
 }
-
-
 
 @media screen and (hover:hover) {
 	.card:hover .background-image {
@@ -62,10 +55,10 @@
 
 .tag {
 	font-family: ManropeMed;
-	font-size: 24px;
+	font-size: clamp(1.125rem, 0.3750rem + 0.9375vw, 1.5rem);
 	text-transform: uppercase;
 	padding: 0px 43px;
-	height: clamp(40px, 7vw, 80px);
+	height: clamp(3.125rem, -0.6250rem + 4.6875vw, 5rem);
 }
 
 .icon {
@@ -100,10 +93,9 @@
 	font-size: clamp(1.25rem, -0.2500rem + 1.8750vw, 2rem);
 	font-family: ManropeReg;
 	margin-bottom: 0px;
-	/* line-height: 48px; */
 	line-height: 138%;
-	max-height: 0px;
-	opacity: 0;
+	max-height: 480px;
+	opacity: 1;
 	transition: max-height 0.2s, opacity 0.3s, margin-bottom 0.35s;
 	overflow-y: hidden;
 }
@@ -138,22 +130,34 @@
 .button {
 	padding: 0;
 	width: 100%;
-	height: clamp(40px, 7vw, 80px);
+	height: clamp(3.125rem, -0.6250rem + 4.6875vw, 5rem);
 	background-color: white;
 	border: none;
 	border-radius: 60px;
-	font-size: 24px;
+	font-size: clamp(1.125rem, 0.3750rem + 0.9375vw, 1.5rem);
 	font-family: ManropeMed;
-	max-height: 0px;
-	scale: 0;
-	opacity: 0;
-	margin-top: 0;
+	max-height: 80px;
+	scale: 1;
+	opacity: 1;
+	margin-top: clamp(26px, 2.5vw, 48px);
 	overflow: hidden;
 	transition: max-height 0.2s, opacity 0.2s, background-color 0.2s, color 0.2s, scale 0.2s, margin-top 0.35s;
 	text-transform: uppercase;
 }
 
 @media (hover:hover) {
+	.description {
+		max-height: 0px;
+		opacity: 0;
+	}
+
+	.button {
+		max-height: 0px;
+		scale: 0;
+		opacity: 0;
+		margin-top: 0;
+	}
+
 	.button:hover {
 		background-color: black;
 		color: white;
@@ -169,7 +173,6 @@
 
 	.card:hover .description {
 		max-height: 480px;
-		/* margin-bottom: clamp(26px, 2.5vw, 48px); */
 		opacity: 1;
 		transition: max-height 0.4s ease-in-out, opacity 0.2s 0.1s, margin-bottom 0.2s;
 		animation: overflow 1s forwards;
@@ -178,42 +181,54 @@
 
 }
 
-@media screen and (max-width: 1250px) {
-	/* .card {
+/* @media screen and (max-width: 1280px) {
+	.card {
 		width: clamp(500px, 80vw, 880px);
 	}
 
 	.description {
 		font-size: clamp(1rem, 0.7935rem + 1.2vw, 1.6rem);
-	} */
-}
+	}
+} */
 
-@media screen and (max-width:835px) {
+@media screen and (max-width:834.9px) {
 
 	.card {
 		width: 100%;
 		max-width: none;
+		height: clamp(23rem, 4.8117rem + 90.9414vw, 55rem);
+		border-radius: clamp(2.25rem, 1.9658rem + 1.4210vw, 2.75rem);
+	}
+
+	.container {
+		padding: clamp(1.5rem, 0.9326rem + 2.8369vw, 2.5rem);
 	}
 
 	.tag {
-		font-size: clamp(16px, 3vw, 24px);
+		height: clamp(2rem, 0.4436rem + 7.7821vw, 4.5rem);
+		font-size: clamp(0.75rem, 0.2831rem + 2.3346vw, 1.5rem);
 		padding: 0px clamp(20px, 5.8vw, 43px);
 	}
 
 	.title {
-		font-size: clamp(28px, 7.6vw, 48px);
+		font-size: clamp(1.25rem, 0.1605rem + 5.4475vw, 3rem);
+	}
+
+	.description {
+		font-size: clamp(1rem, 0.2908rem + 3.5461vw, 2.25rem);
 	}
 
 	.button {
-		font-size: clamp(16px, 3vw, 24px);
+		height: clamp(2rem, 0.4436rem + 7.7821vw, 4.5rem);
+		font-size: clamp(0.75rem, 0.2831rem + 2.3346vw, 1.5rem);
 	}
 
-	@media (hover:hover) {
+	/* @media (hover:hover) {
 
 		.card:hover .description {
 			max-height: clamp(320px, 58vw, 480px);
 		}
-	}
+	} */
 }
 
 @media screen and (max-width: 430px) {
@@ -224,12 +239,12 @@
 }
 
 
-@media (hover:hover) {
+/* @media (hover:hover) {
 	.tag-info {
 		display: none;
 	}
-}
-
+} */
+/* 
 @media (hover:none) {
 	.tag-info {
 		display: flex;
@@ -278,4 +293,4 @@
 	to {
 		overflow-y: auto
 	}
-}
+} */

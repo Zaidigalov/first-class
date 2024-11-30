@@ -64,7 +64,7 @@ export default function City() {
           <Hotels title={`${width > 1270 ? "Book the /best hotels/ in the world /with us/" : "Book the /best hotels/"}`} data={data.hotels} />
           <SliderBig slides={data.events} title={data.translations.en.name} targetLink="/events/" />
           {/* <Circle full={false} title="" places={data.random_cities} /> */}
-          <Footer color={data.color_footer} image={data.image_footer} />
+          <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
       )}
     </>

@@ -68,7 +68,7 @@ export default function Continent() {
             slides={data.destinations}
           ></SliderBig>
           {/*  <Circle full={false} title="" places={data.random_cities} /> */}
-          <Footer color={data.color_footer} image={data.image_footer} />
+          <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
       )}
       {/*       
