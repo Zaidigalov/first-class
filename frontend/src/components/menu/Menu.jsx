@@ -19,6 +19,7 @@ export default function Menu({ closeOverlay, width }) {
 
   useEffect(() => {
     console.log(slides);
+    console.log(current);
   });
 
   return (
@@ -104,7 +105,7 @@ export default function Menu({ closeOverlay, width }) {
             className={`${styles["nav-item"]}`}
             onClick={() => {
               setSlides(servises);
-              setCurrent("servises");
+              setCurrent("serviсes");
             }}
           >
             Services
