@@ -11,7 +11,17 @@ import "../sliderStrings/sliderString.css";
 
 export default function Rent({ slides, mb }) {
   const current = useLocation().pathname;
-  if (current === "/rent");
+  const target = useLocation().hash.split("#")[1];
+
+  function getTargetSlide(target) {
+    const targetSlide = slides.find((slide) => slide.search.toLowerCase() == target);
+    const targetSlideIndex = slides.indexOf(targetSlide);
+    const newSlides = slides;
+    newSlides.splice(targetSlideIndex, 1);
+    newSlides.unshift(targetSlide);
+  }
+
+  getTargetSlide(target);
 
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
@@ -30,17 +40,20 @@ export default function Rent({ slides, mb }) {
   const settingsSlides = {
     className: `${styles.slider} rent-slider`,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     focusOnSelect: true,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    touchThreshold: 10,
   };
 
   const settingsBackground = {
     className: `${styles["slider-background"]}`,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
@@ -48,6 +61,7 @@ export default function Rent({ slides, mb }) {
     fade: true,
     arrows: false,
     mousewheel: true,
+    touchThreshold: 10,
   };
 
   return (

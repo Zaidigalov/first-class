@@ -33,7 +33,7 @@ function App() {
         <Route path="/tour/:tourName" element={<Tour />} />
         <Route path="/about" element={<About />} />
         <Route path="/destinations" element={<DestinationsPage />} />
-        <Route path="/rent" element={<RentPage />} />
+        <Route path="/services/#serviceName?" element={<RentPage />} />
         <Route path="/adventures" element={<Adventures />} />
         <Route path="/adventures/:adventureName" element={<Adventure />} />
         <Route path="/hotels" element={<HotelsPage />} />

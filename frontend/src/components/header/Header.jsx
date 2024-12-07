@@ -80,7 +80,7 @@ export default function Header({ full, transparent, width }) {
                     <p>Adventures</p>
                     <span>+</span>
                   </Link>
-                  <Link to="/rent" className={`${styles["main-link"]}`}>
+                  <Link to="/services" className={`${styles["main-link"]}`}>
                     <p>Services</p>
                     <span>+</span>
                   </Link>

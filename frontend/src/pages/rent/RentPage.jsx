@@ -20,6 +20,7 @@ export default function RentPage() {
         slides={[
           {
             translations: { en: { name: "Yachts" } },
+            search: "Yachts",
             cursive: "",
             link: "#",
             description:
@@ -28,6 +29,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Cruises" } },
+            search: "Cruises",
             cursive: "cursive",
             link: "#",
             description:
@@ -36,6 +38,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Challets" } },
+            search: "Challets",
             cursive: "",
             link: "#",
             description:
@@ -44,6 +47,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Hotels" } },
+            search: "Hotels",
             cursive: "cursive",
             link: "#",
             description: "Enjoy ultimate relaxation and adventure at our hotels, offering a blend of luxury accommodations and extensive amenities.",
@@ -51,6 +55,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Villas" } },
+            search: "Villas",
             cursive: "",
             link: "#",
             description:
@@ -59,6 +64,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Jets" } },
+            search: "Jets",
             cursive: "",
             link: "#",
             description:
@@ -67,6 +73,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Corporate client" } },
+            search: "Corporate",
             cursive: "cursive",
             link: "#",
             description:
@@ -75,6 +82,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Visa Services" } },
+            search: "Visa",
             cursive: "cursive",
             link: "#",
             description:
@@ -83,6 +91,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "Flight tickets" } },
+            search: "tickets",
             cursive: "cursive",
             link: "#",
             description:
@@ -91,6 +100,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "airport vip services" } },
+            search: "vip",
             cursive: "cursive",
             link: "#",
             description:
@@ -99,6 +109,7 @@ export default function RentPage() {
           },
           {
             translations: { en: { name: "unique experiences" } },
+            search: "unique",
             cursive: "cursive",
             link: "#",
             description:

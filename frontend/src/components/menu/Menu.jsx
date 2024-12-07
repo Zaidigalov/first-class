@@ -11,16 +11,15 @@ import cursivingText from "../../functions/cursivingText";
 
 import "./menu.css";
 
-import { servises, types } from "../../MOCK/slides";
+import { servises, adventures } from "../../MOCK/slides";
 
 export default function Menu({ closeOverlay, width }) {
   const [slides, setSlides] = useState(servises);
+  const [current, setCurrent] = useState("services");
 
   useEffect(() => {
     console.log(slides);
   });
-
-  function switchSlides(newSlides) {}
 
   return (
     <section className={styles.menu}>
@@ -76,12 +75,13 @@ export default function Menu({ closeOverlay, width }) {
                 <SwiperSlide key={index}>
                   <div className={styles["slide-container"]}>
                     <div data-swiper-parallax="-200" className={styles["title-container"]}>
-                      <h2
+                      <Link
+                        to={current === "services" ? `/${current}#${slide.slug}` : `/${current}/${slide.slug}`}
                         className={styles.title}
                         dangerouslySetInnerHTML={{
                           __html: cursivingText(slide.title),
                         }}
-                      ></h2>
+                      ></Link>
                     </div>
                     <img className={styles.image} src={slide.image} alt="" />
                   </div>
@@ -100,10 +100,22 @@ export default function Menu({ closeOverlay, width }) {
           <Link to="../" className={`${styles["nav-item"]}`}>
             Destinations
           </Link>
-          <button className={`${styles["nav-item"]}`} onClick={() => switchSlides(servises)}>
+          <button
+            className={`${styles["nav-item"]}`}
+            onClick={() => {
+              setSlides(servises);
+              setCurrent("servises");
+            }}
+          >
             Services
           </button>
-          <button className={`${styles["nav-item"]}`} onClick={() => switchSlides(types)}>
+          <button
+            className={`${styles["nav-item"]}`}
+            onClick={() => {
+              setSlides(adventures);
+              setCurrent("adventures");
+            }}
+          >
             Adventures
           </button>
           <Link to="../" className={`${styles["nav-item"]}`}>
