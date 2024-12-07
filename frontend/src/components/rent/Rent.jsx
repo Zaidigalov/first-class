@@ -21,7 +21,7 @@ export default function Rent({ slides, mb }) {
     newSlides.unshift(targetSlide);
   }
 
-  getTargetSlide(target);
+  if (target) getTargetSlide(target);
 
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
