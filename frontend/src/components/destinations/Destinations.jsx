@@ -13,6 +13,8 @@ export default function Destinations({ title, isInputExist, tags, destinations }
   const [data, setData] = useState(destinations);
   const [width, setWidth] = useState(window.innerWidth);
 
+  console.log(destinations);
+
   const settings = {
     className: `${styles.slider}`,
     /* variableWidth: true, */
@@ -171,7 +173,7 @@ export default function Destinations({ title, isInputExist, tags, destinations }
           })}
         </Slider>
       );
-    } else if (data.length < 10 && data.length !== 0) {
+    } else if (data.length <= 10 && data.length !== 0) {
       return (
         <>
           {data.map((destination, index) => {
