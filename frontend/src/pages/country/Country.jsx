@@ -69,7 +69,7 @@ export default function Country() {
 
           {/* <Section_4Pic text="/Hamilton Island/" image="../images/ph.jpg" isButtonExist={true} /> */}
           <SliderBig slides={data.events} title={data.translations.en.name} targetLink="/events/" />
-          <Hotels title={`${width > 1270 ? "Book the /best hotels/ in the world /with us/" : "Book the /best hotels/"}`} data={data.hotels}></Hotels>
+          <Hotels title={`${width > 640 ? "The /best hotels/ in the world" : "The /best hotels/"}`} data={data.hotels} />
           <SliderBig slides={data.destinations} title={data.translations.en.name} targetLink="/tour/" />
           {/* <Circle full={false} title="" places={data.random_cities} /> */}
 

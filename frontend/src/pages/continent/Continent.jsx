@@ -56,12 +56,8 @@ export default function Continent() {
           <Hero full={false} location={data.translations.en.name} image={data.image} isButtonExist={true} />
           {/* <Section_2Tags></Section_2Tags> */}
           <Destinations title="Destinations" isInputExist={false} tags={false} destinations={data.countries}></Destinations>
-          <SliderBig
-            title={`${width > 1750 ? "Exceptional Locations /&/ Natural /Wonders/" : "Exceptional Locations"}`}
-            targetLink="/country/"
-            slides={data.events}
-          ></SliderBig>
-          <Hotels title={`${width > 1270 ? "Book the /best hotels/ in the world /with us/" : "Book the /best hotels/"}`} data={data.hotels}></Hotels>
+          <SliderBig title={`${width > 1750 ? "Exceptional Locations /&/ Natural /Wonders/" : "Exceptional Locations"}`} targetLink="/country/" slides={data.events}></SliderBig>
+          <Hotels title={`${width > 640 ? "The /best hotels/ in the world" : "The /best hotels/"}`} data={data.hotels} />
           <SliderBig
             title={`${width > 1750 ? `Exclusive /${data.translations.en.name}/ with first class` : `Exclusive /${data.translations.en.name}/`}`}
             targetLink="/tour/"

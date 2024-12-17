@@ -41,14 +41,23 @@
 	outline-offset: -1px;
 	border-radius: clamp(11px, 1vw, 20px);
 	aspect-ratio: 1;
-	background: url(../images/icons/arrow.svg) no-repeat center center;
-	background-size: clamp(2rem, -1.5000rem + 4.3750vw, 3.75rem);
+	/* background: url(../images/icons/arrows.svg#arrow-right) no-repeat center center;
+	background-size: clamp(2rem, -1.5000rem + 4.3750vw, 3.75rem); */
 }
 
-.slider-arrow-prev {}
+.slider-arrow svg {
+	width: clamp(20px, 2.8vw, 48px);
+	aspect-ratio: 1;
+}
+
+
+.slider-arrow-prev {
+	/* transform: rotate(180deg); */
+	scale: -1 1;
+}
 
 .slider-arrow-next {
-	transform: rotate(180deg);
+	/* transform: rotate(180deg); */
 }
 
 @media screen and (max-width: 1050px) {

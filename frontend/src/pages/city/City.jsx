@@ -61,7 +61,7 @@ export default function City() {
           {/* <Runline text={"hero /Line/"} /> */}
           {/* <Section_4Pic text="/Hamilton Island/" image="../images/ph.jpg" isButtonExist={true} /> */}
           <SliderBig slides={data.events} id={1} title={data.translations.en.name} targetLink="/events/" />
-          <Hotels title={`${width > 1270 ? "Book the /best hotels/ in the world /with us/" : "Book the /best hotels/"}`} data={data.hotels} />
+          <Hotels title={`${width > 640 ? "The /best hotels/ in the world" : "The /best hotels/"}`} data={data.hotels} />
           <SliderBig slides={data.sliderSecond} id={2} title={data.translations.en.name} targetLink="/events/" />
           {/* <Circle full={false} title="" places={data.random_cities} /> */}
           <Footer width={width} color={data.color_footer} image={data.image_footer} />

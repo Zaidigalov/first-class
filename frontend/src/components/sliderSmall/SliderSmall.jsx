@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+
 import styles from "./sliderSmall.module.css";
 import SliderCardSmall from "../sliderCardSmall/SliderCardSmall";
 
@@ -81,6 +82,7 @@ export default function SliderSmall({ slides, targetLink }) {
         </div>
       );
     }
+
     return null; // Для случаев, когда не соответствует ни одно условие
   };
 

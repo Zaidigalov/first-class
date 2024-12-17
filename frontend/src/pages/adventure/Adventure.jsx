@@ -8,7 +8,7 @@ import SliderBig from "../../components/sliderBig/SliderBig";
 import Runline from "../../components/runline/Runline";
 import Footer from "../../components/footer/Footer";
 
-const properties = {
+/* const properties = {
   welcome: {
     full: false,
     country: "Country",
@@ -97,7 +97,7 @@ const properties = {
     color: "#4B4B4B",
     image: "../images/ph.jpg",
   },
-};
+}; */
 
 export default function Adventure() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -112,7 +112,7 @@ export default function Adventure() {
     <>
       <Header full={false} transparent={false} width={width}></Header>
       <Hero full={false} location="extreme tourism" image="../images/countries/israel/TelAviv/1.1TelAviv.jpg" isButtonExist={true}></Hero>
-      <Destinations
+      {/*  <Destinations
         title="Destinations"
         isInputExist={true}
         tags={["Mountaineering", "Rock Climbing", "Skydiving"]}
@@ -247,7 +247,7 @@ export default function Adventure() {
             link: "/hotel",
           },
         ]}
-      ></Hotels>
+      ></Hotels> */}
       {/* <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline>
 			<Circle title="" full={false} places={
 				{

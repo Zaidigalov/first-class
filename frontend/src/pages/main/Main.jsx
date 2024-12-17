@@ -63,7 +63,7 @@ export default function Main() {
       {data && (
         <>
           <Hero full={true} location={data.country.name} image={`${data.country.image}`} isButtonExist={true} link="/country"></Hero>
-          <Hotels title={`${width > 1270 ? "Book the /best hotels/ in the world /with us/" : "Book the /best hotels/"}`} data={data.hotels}></Hotels>
+          <Hotels title={`${width > 640 ? "The /best hotels/ in the world" : "The /best hotels/"}`} data={data.hotels} />
         </>
       )}
 
@@ -87,8 +87,7 @@ export default function Main() {
             translations: {
               en: {
                 name: "Incentive Tours",
-                description:
-                  "Trips for employees as a reward for work achievements. These tours may include leisure activities, entertainment events, and team-building exercises",
+                description: "Trips for employees as a reward for work achievements. These tours may include leisure activities, entertainment events, and team-building exercises",
               },
             },
             image: "../images/main-page/Incentive-Tours.jpg",
@@ -99,8 +98,7 @@ export default function Main() {
             translations: {
               en: {
                 name: "Team Building",
-                description:
-                  "Organizing activities aimed at strengthening team cohesion and improving team interaction. These can include sports events, quests, outdoor training, and more",
+                description: "Organizing activities aimed at strengthening team cohesion and improving team interaction. These can include sports events, quests, outdoor training, and more",
               },
             },
             image: "../images/main-page/Team-Building.jpg",
@@ -122,8 +120,7 @@ export default function Main() {
             translations: {
               en: {
                 name: "Educational Trips",
-                description:
-                  "Organizing trips for employee skill enhancement, learning new skills, and exchanging experiences with colleagues from other companies or countries",
+                description: "Organizing trips for employee skill enhancement, learning new skills, and exchanging experiences with colleagues from other companies or countries",
               },
             },
             image: "../images/main-page/Educational-Trips.jpg",

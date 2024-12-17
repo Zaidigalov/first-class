@@ -17,10 +17,21 @@ export default function SliderBig({ slides, title, targetLink }) {
     <section className={styles["slider-container"]}>
       <h2 className={`${styles.title} title`} dangerouslySetInnerHTML={{ __html: cursivingText(title) }}></h2>
 
-      <div className={`${styles["slider-arrows"]} slider-arrows`}>
-        <button className={`${styles["slider-arrow"]} ${styles["slider-arrow-prev"]}`} onClick={() => swiperRef.current.slidePrev()}></button>
-        <button className={`${styles["slider-arrow"]} ${styles["slider-arrow-next"]}`} onClick={() => swiperRef.current.slideNext()}></button>
-      </div>
+      {slides.length > 2 && (
+        <div className={`${styles["slider-arrows"]} slider-arrows`}>
+          <button className={`${styles["slider-arrow"]} ${styles["slider-arrow-prev"]}`} onClick={() => swiperRef.current.slidePrev()}>
+            <svg>
+              <use href="../images/icons/arrows.svg#arrow-right"></use>
+            </svg>
+          </button>
+          <button className={`${styles["slider-arrow"]} ${styles["slider-arrow-next"]}`} onClick={() => swiperRef.current.slideNext()}>
+            <svg>
+              <use href="../images/icons/arrows.svg#arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      )}
+
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

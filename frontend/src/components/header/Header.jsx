@@ -86,7 +86,7 @@ export default function Header({ full, transparent, width }) {
                   </Link>
                 </div>
 
-                <Link to="/meet" className={`${styles.meet}`}>
+                <Link to="/meet-and-greet" className={`${styles.meet}`}>
                   VIP in Airports
                 </Link>
               </nav>

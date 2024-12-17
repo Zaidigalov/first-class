@@ -7,6 +7,8 @@ import Footer from "../../components/footer/Footer";
 import SliderSmall from "../../components/sliderSmall/SliderSmall";
 import Searchbar from "../../components/searchbar/Searchbar";
 
+import { allAdventures } from "../../MOCK/slides";
+
 export default function Adventures() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -20,51 +22,8 @@ export default function Adventures() {
     <>
       <Header full={false} transparent={false} width={width} />
       <Searchbar title="Types of travalers" isInputExist={false} tags={["", ""]} onSearch={""} />
-      <SliderSmall
-        targetLink="/adventures"
-        slides={[
-          {
-            slug: "beach",
-            image: "../images/main-page/Luxury-Travel.jpg",
-            translations: {
-              en: {
-                name: "Beach",
-              },
-              ru: {},
-            },
-          },
-          {
-            slug: "ski",
-            image: "../images/main-page/Luxury-Travel.jpg",
-            translations: {
-              en: {
-                name: "Ski",
-              },
-              ru: {},
-            },
-          },
-          {
-            slug: "honeymoon",
-            image: "../images/main-page/Luxury-Travel.jpg",
-            translations: {
-              en: {
-                name: "Honeymoon",
-              },
-              ru: {},
-            },
-          },
-          {
-            slug: "active",
-            image: "../images/main-page/Luxury-Travel.jpg",
-            translations: {
-              en: {
-                name: "Active",
-              },
-              ru: {},
-            },
-          },
-        ]}
-      />
+      <SliderSmall targetLink="/adventures" slides={allAdventures.slice(0, 8)} />
+      <SliderSmall targetLink="/adventures" slides={allAdventures.slice(8)} />
       {/* <Runline text={"Discover other incredible worlds with /first clas/"}/> */}
       {/* <Circle
         title=""
