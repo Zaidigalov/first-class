@@ -78,7 +78,7 @@ body {
 	height: 100%;
 	font-family: Manrope, Arial, Helvetica, sans-serif;
 	flex-basis: 100%;
-	max-width: 2560px;
+	/* max-width: 2560px; */
 	width: 100%;
 	margin: auto;
 }

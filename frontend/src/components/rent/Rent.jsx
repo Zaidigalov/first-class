@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderStringsCard from "../sliderStrings/SliderStringsCard";
-
 import "../sliderStrings/sliderString.css";
 
 export default function Rent({ slides, mb }) {

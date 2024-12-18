@@ -16,8 +16,8 @@ export default function SliderSmall({ slides, targetLink }) {
     touchThreshold: 100,
     adaptiveHeight: true,
     initialSlide: 0,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    /* nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />, */
     responsive: [
       {
         breakpoint: 940,

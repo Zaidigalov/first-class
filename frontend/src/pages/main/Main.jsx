@@ -8,6 +8,7 @@ import SliderBig from "../../components/sliderBig/SliderBig";
 import Runline from "../../components/runline/Runline";
 import Footer from "../../components/footer/Footer";
 import SliderMain from "../../components/sliderMain/SliderMain";
+import Cities from "../../components/cities/Cities";
 
 import mock from "../../MOCK/main";
 import { path, state } from "../../path";
@@ -62,7 +63,12 @@ export default function Main() {
  */}
       {data && (
         <>
-          <Hero full={true} location={data.country.name} image={`${data.country.image}`} isButtonExist={true} link="/country"></Hero>
+          <Hero full={true} location={data.country.name} image={`${data.country.image}`} isButtonExist={true} link={`/country/${data.country.slug}`}></Hero>
+          <br />
+          <br />
+          <br />
+          <br />
+          <Cities slides={data.continents} target="continent" />
           <Hotels title={`${width > 640 ? "The /best hotels/ in the world" : "The /best hotels/"}`} data={data.hotels} />
         </>
       )}
@@ -98,7 +104,8 @@ export default function Main() {
             translations: {
               en: {
                 name: "Team Building",
-                description: "Organizing activities aimed at strengthening team cohesion and improving team interaction. These can include sports events, quests, outdoor training, and more",
+                description:
+                  "Organizing activities aimed at strengthening team cohesion and improving team interaction. These can include sports events, quests, outdoor training, and more",
               },
             },
             image: "../images/main-page/Team-Building.jpg",

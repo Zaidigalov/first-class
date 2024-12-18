@@ -48,6 +48,7 @@
 .slider-arrow svg {
 	width: clamp(20px, 2.8vw, 48px);
 	aspect-ratio: 1;
+	padding-top: 5px;
 }
 
 

@@ -21,8 +21,8 @@ export default function Destinations({ title, isInputExist, tags, destinations }
     infinite: false,
     speed: 500,
     slidesToShow: 10,
-    slidesToScroll: 2,
-    touchThreshold: 25,
+    slidesToScroll: 5,
+    touchThreshold: 100,
     /* adaptiveHeight: true, */
     /* initialSlide: 0, */
     dots: false,

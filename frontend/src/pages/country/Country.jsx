@@ -39,7 +39,7 @@ export default function Country() {
         if (response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
+          /* console.log(result); */
         } else {
           throw new Error("Network response was not ok");
         }
@@ -65,7 +65,7 @@ export default function Country() {
           <br />
           <br />
           <br />
-          {data.cities.length > 0 && <Cities slides={data.cities} />}
+          {data.cities.length > 0 && <Cities slides={data.cities} target="city" />}
 
           {/* <Section_4Pic text="/Hamilton Island/" image="../images/ph.jpg" isButtonExist={true} /> */}
           <SliderBig slides={data.events} title={data.translations.en.name} targetLink="/events/" />

@@ -6,9 +6,7 @@ export default function Footer({ color, image, width }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.container} style={{ backgroundColor: color ? color : "#d9d9d9" }}>
-        <p className={styles.description}>
-          JSC «First Class Solutions» offers premium bookings for hotels, villas, private jets, and yachts through trusted top partners.
-        </p>
+        <p className={styles.description}>JSC «First Class Solutions» offers premium bookings for hotels, villas, private jets, and yachts through trusted top partners.</p>
         <a className={styles.phone} href=" tel:89033844842">
           +7 903 384-48-42
         </a>
@@ -29,7 +27,7 @@ export default function Footer({ color, image, width }) {
             Telegram
           </a>
           <a target="_blank" href="">
-            instagram
+            Instagram
           </a>
           <a target="_blank" href="">
             WhatsApp

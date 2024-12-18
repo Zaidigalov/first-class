@@ -67,7 +67,7 @@ export default function Header({ full, transparent, width }) {
                   <div className={`${styles["find-button"]} ${styles.button}`}>
                     <img src="../images/icons/Airplane.svg"></img>
                   </div>
-                  <Link to="/" className={`${styles["find-text"]}`}>
+                  <Link to="/country/random" className={`${styles["find-text"]}`}>
                     Unexpected Discovers
                   </Link>
                 </div>

@@ -9,7 +9,7 @@ import SliderStringsCard from "../sliderStrings/SliderStringsCard";
 import "../sliderStrings/sliderString.css";
 import { Link } from "react-router-dom";
 
-export default function Cities({ slides }) {
+export default function Cities({ slides, target }) {
   const settingsSlides = {
     className: `${styles.slider} cities-slider`,
     infinite: true,
@@ -19,6 +19,7 @@ export default function Cities({ slides }) {
     centerMode: false,
     focusOnSelect: true,
     arrows: false,
+    touchThreshold: 100,
   };
 
   const settingsBackground = {
@@ -31,6 +32,7 @@ export default function Cities({ slides }) {
     focusOnSelect: false,
     fade: true,
     arrows: false,
+    touchThreshold: 100,
     /* autoplay: true,
 		autoplaySpeed: 5000, */
   };
@@ -52,7 +54,7 @@ export default function Cities({ slides }) {
           <>
             <Slider slides={slides} asNavFor={nav2} ref={(slider) => (sliderRef1 = slider)} {...settingsSlides}>
               {slides.map((slide, index) => {
-                return <SliderStringsCard key={index} slide={slide}></SliderStringsCard>;
+                return <SliderStringsCard key={index} slide={slide} target={target}></SliderStringsCard>;
               })}
             </Slider>
 

@@ -19,7 +19,8 @@
 .destination {
 	grid-area: destination;
 	font-size: 28px;
-	font-family: Manrope;
+	font-family: ManropeReg;
+	align-self: self-start;
 }
 
 .description {

@@ -29,6 +29,11 @@ export default function SliderCardBig({ tags, /* tagIcon, */ title, description,
       setTimeout(() => {
         card.current.addEventListener("mousemove", handleMouseMove);
       }, 0);
+
+      setTimeout(() => {
+        card.current.addEventListener("mousemove", handleMouseMove);
+        card.current.classList.add(styles["card-hovered"]);
+      }, 400);
     };
 
     const handleMouseMove = (e) => {
@@ -40,6 +45,7 @@ export default function SliderCardBig({ tags, /* tagIcon, */ title, description,
 
     const handleMouseLeave = () => {
       cardBackground.current.style.transform = "translate(0px, 0px)";
+      card.current.classList.remove(styles["card-hovered"]);
       setTimeout(() => {
         cardOnHover = false;
       }, 300);
@@ -92,7 +98,7 @@ export default function SliderCardBig({ tags, /* tagIcon, */ title, description,
           <p className={`${styles.description}`} dangerouslySetInnerHTML={description ? { __html: addNobr(description) } : undefined}></p>
           {button && (
             <a className={`${styles.button}  button`} href={button}>
-              {"linkText"}
+              {"Explore"}
             </a>
           )}
         </div>

@@ -57,7 +57,7 @@ export default function Tour() {
             <div key={index}>
               <div className={styles.shedule}>
                 <p className={`${styles.days} title cursive`}>{item.translations.en.duration}</p>
-                <p className={styles.destination}>destination: {item.translations.en.name}</p>
+                <p className={styles.destination}>Destination: {item.translations.en.name}</p>
                 <p className={styles.description} dangerouslySetInnerHTML={{ __html: addNobr(item.translations.en.description) }}></p>
               </div>
               <SliderBig key={index} title={item.translations.en.name} targetLink="" slides={item.event}></SliderBig>
