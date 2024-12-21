@@ -1,5 +1,5 @@
-const path = "https://ec2-3-79-156-23.eu-central-1.compute.amazonaws.com/api/";
+const path = "https://ec2-18-192-23-92.eu-central-1.compute.amazonaws.com/api/v1/";
 
-let state = false;
+let isMOCKData = false;
 
-export { path, state };
+export { path, isMOCKData };

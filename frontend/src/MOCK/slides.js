@@ -55,57 +55,62 @@ const adventures = [
   {
     title: "/Beach/ tourism",
     image: "../images/adventures/Beach.jpg",
-    slug: "beach-tourism",
+    slug: "",
+    //slug: "beach-tourism",
   },
   {
     title: "/Ski/ tourism",
     image: "../images/adventures/Ski.jpg",
-    slug: "ski-tourism",
+    slug: "",
+    //slug: "ski-tourism",
   },
   {
     title: "/Honey/moon",
     image: "../images/adventures/Honeymoon.jpg",
-    slug: "honeymoon",
+    slug: "",
+    //slug: "honeymoon",
   },
   {
     title: "/Wellness/ tourism",
     image: "../images/adventures/Wellness.jpg",
-    slug: "wellness-tourism",
+    slug: "",
+    //slug: "wellness-tourism",
   },
   {
     title: "/Sightseeing/",
     image: "../images/adventures/Sightseeing.jpg",
-    slug: "sightseeing-tourism",
+    slug: "",
+    //slug: "sightseeing-tourism",
   },
   {
     title: "/Adventure/",
     image: "../images/adventures/Adventure.jpg",
-    slug: "adventure-tourism",
+    slug: "",
+    //slug: "adventure-tourism",
   },
   {
     title: "/Gastronomic/",
     image: "../images/adventures/Gastronomic.jpg",
-    slug: "gastronomic-tourism",
+    slug: "",
+    //slug: "gastronomic-tourism",
   },
   {
     title: "/Religious/",
     image: "../images/adventures/Religious.jpg",
-    slug: "religious-tourism",
+    slug: "",
+    //slug: "religious-tourism",
   },
   {
     title: "/Cultural/",
     image: "../images/adventures/Cultural.jpg",
-    slug: "cultural-tourism",
+    slug: "",
+    //slug: "cultural-tourism",
   },
   {
     title: "/Eco/tourism",
     image: "../images/adventures/Ecotourism.jpg",
-    slug: "ecotourism",
-  },
-  {
-    title: "/Eco/tourism",
-    image: "../images/adventures/Ecotourism.jpg",
-    slug: "ecotourism",
+    slug: "",
+    //slug: "ecotourism",
   },
 ];
 
@@ -117,7 +122,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Beach.jpg",
-    slug: "beach-tourism",
+    slug: "",
+    //slug: "beach-tourism",
   },
   {
     translations: {
@@ -126,7 +132,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Ski.jpg",
-    slug: "ski-tourism",
+    slug: "",
+    //slug: "ski-tourism",
   },
   {
     translations: {
@@ -135,7 +142,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Honeymoon.jpg",
-    slug: "honeymoon",
+    slug: "",
+    //slug: "honeymoon",
   },
   {
     translations: {
@@ -144,7 +152,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Wellness.jpg",
-    slug: "wellness-tourism",
+    slug: "",
+    //slug: "wellness-tourism",
   },
   {
     translations: {
@@ -153,7 +162,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Sightseeing.jpg",
-    slug: "sightseeing-tourism",
+    slug: "",
+    //slug: "sightseeing-tourism",
   },
   {
     translations: {
@@ -162,7 +172,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Adventure.jpg",
-    slug: "adventure-tourism",
+    slug: "",
+    //slug: "adventure-tourism",
   },
   {
     translations: {
@@ -171,7 +182,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Gastronomic.jpg",
-    slug: "gastronomic-tourism",
+    slug: "",
+    //slug: "gastronomic-tourism",
   },
   {
     translations: {
@@ -180,7 +192,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Religious.jpg",
-    slug: "religious-tourism",
+    slug: "",
+    //slug: "religious-tourism",
   },
   {
     translations: {
@@ -189,7 +202,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Cultural.jpg",
-    slug: "cultural-tourism",
+    slug: "",
+    //slug: "cultural-tourism",
   },
   {
     translations: {
@@ -198,26 +212,27 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Ecotourism.jpg",
-    slug: "ecotourism",
+    slug: "",
+    //slug: "ecotourism",
   },
-  {
+  /*   {
     translations: {
       en: {
         name: "Active",
       },
     },
     image: "../images/adventures/Active.jpg",
-    slug: "active-tourism",
-  },
-  {
+    slug: "",
+  }, */
+  /*   {
     translations: {
       en: {
         name: "Cruise",
       },
     },
     image: "../images/adventures/Cruise.jpg",
-    slug: "cruise-tourism",
-  },
+    slug: "",
+  }, */
   {
     translations: {
       en: {
@@ -225,7 +240,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Rural.jpg",
-    slug: "rural-tourism",
+    slug: "",
+    //slug: "rural-tourism",
   },
   {
     translations: {
@@ -234,7 +250,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Corporate.jpg",
-    slug: "corporate-tourism",
+    slug: "",
+    //slug: "corporate-tourism",
   },
   {
     translations: {
@@ -243,7 +260,8 @@ const allAdventures = [
       },
     },
     image: "../images/adventures/Anniversary.jpg",
-    slug: "anniversary-tourism",
+    slug: "",
+    //slug: "anniversary-tourism",
   },
 ];
 

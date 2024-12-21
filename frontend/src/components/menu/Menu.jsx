@@ -93,7 +93,7 @@ export default function Menu({ closeOverlay, width }) {
             <Link to={`/destinations`} className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("desti/nations/") }}></Link>
             <Link to={`/services`} className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("/Ser/vices") }}></Link>
             <Link to={`/adventures`} className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("Adven/tures/") }}></Link>
-            <Link to={`/meet-and-greet`} className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("/VIP/ in Airports") }}></Link>
+            <a href="https://meetplusgreet.com/" target="_blank" className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("/VIP/ in Airports") }}></a>
             <button className={`${styles["nav-item"]}`} dangerouslySetInnerHTML={{ __html: cursivingText("Send req/uest/") }}></button>
           </nav>
         )}
@@ -102,33 +102,47 @@ export default function Menu({ closeOverlay, width }) {
       {width > 834 && (
         <nav className={styles.navigation}>
           <div className={styles["navigation-container"]}>
-            <Link to="" className={`${styles["nav-item"]}`}>
+            <Link to="/about" className={`${styles["nav-item"]}`}>
               About
             </Link>
             <Link to="/destinations" className={`${styles["nav-item"]}`}>
               Destinations
             </Link>
-            <button
-              className={`${styles["nav-item"]}`}
-              onClick={() => {
-                setSlides(servises);
-                setCurrent("services");
-              }}
-            >
-              Services
-            </button>
-            <button
-              className={`${styles["nav-item"]}`}
-              onClick={() => {
-                setSlides(adventures);
-                setCurrent("adventures");
-              }}
-            >
-              Adventures
-            </button>
-            <Link to="/meet-and-greet" className={`${styles["nav-item"]}`}>
+            {width > 834 ? (
+              <>
+                <button
+                  className={`${styles["nav-item"]}`}
+                  onClick={() => {
+                    setSlides(servises);
+                    setCurrent("services");
+                  }}
+                >
+                  Services
+                </button>
+                <button
+                  className={`${styles["nav-item"]}`}
+                  onClick={() => {
+                    setSlides(adventures);
+                    setCurrent("adventures");
+                  }}
+                >
+                  Adventures
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/services" className={`${styles["nav-item"]}`}>
+                  Services
+                </Link>
+                <Link to="/adventures" className={`${styles["nav-item"]}`}>
+                  Adventures
+                </Link>
+              </>
+            )}
+
+            <a href="https://meetplusgreet.com/" target="_blank" className={`${styles["nav-item"]}`}>
               VIP in Airports
-            </Link>
+            </a>
             <button className={`${styles["nav-item"]}`}>Send request</button>
           </div>
         </nav>

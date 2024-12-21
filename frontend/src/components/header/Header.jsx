@@ -86,22 +86,25 @@ export default function Header({ full, transparent, width }) {
                   </Link>
                 </div>
 
-                <Link to="/meet-and-greet" className={`${styles.meet}`}>
+                <a href="https://meetplusgreet.com/" target="_blank" className={`${styles.meet}`}>
                   VIP in Airports
-                </Link>
+                </a>
               </nav>
             </>
           )}
 
           <div className={`${styles.buttons}`}>
-            <button
+            {/* <button
               className={`${styles.button}`}
               onClick={() => {
-                overlayClass === "showed" ? closeOverlay() : null /* showOverlay(<Contact></Contact>) */;
+                overlayClass === "showed" ? closeOverlay() : showOverlay(<Contact></Contact>);
               }}
             >
               <img src="../images/icons/Phone.svg"></img>
-            </button>
+            </button> */}
+            <a href="tel:89033844842" className={`${styles.button}`}>
+              <img src="../images/icons/Phone.svg"></img>
+            </a>
             <button
               className={`${styles.button}`}
               onClick={() => {

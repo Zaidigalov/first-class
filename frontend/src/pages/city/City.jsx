@@ -13,11 +13,12 @@ import Footer from "../../components/footer/Footer";
 import Cities from "../../components/cities/Cities";
 /* import SliderRunline from '../../components/sliderRunline/SliderRunline'; */
 import Hotels from "../../components/hotels/Hotels";
+import Loader from "../../components/loader/Loader";
 
-import { path, state } from "../../path";
+import { path, isMOCKData } from "../../path";
 import mock from "../../MOCK/city";
 let newState;
-if (state) newState = mock;
+if (isMOCKData) newState = mock;
 else newState = null;
 
 export default function City() {
@@ -39,7 +40,7 @@ export default function City() {
         if (response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
+          /*console.log(result);*/
         } else {
           throw new Error("Network response was not ok");
         }
@@ -52,10 +53,9 @@ export default function City() {
 
   return (
     <>
-      <Header full={false} transparent={false} width={width} />
-
-      {data && (
+      {data ? (
         <>
+          <Header full={false} transparent={false} width={width} />
           <Hero full={false} location={data.translations.en.name} image={data.image} isButtonExist={true} /* link="" */ />
           {/* <Section_2Tags /> */}
           {/* <Runline text={"hero /Line/"} /> */}
@@ -66,6 +66,8 @@ export default function City() {
           {/* <Circle full={false} title="" places={data.random_cities} /> */}
           <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
+      ) : (
+        <Loader />
       )}
     </>
   );

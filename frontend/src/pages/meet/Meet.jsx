@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../common.css";
 import Header from "../../components/header/Header";
 import Hero from "../../components/hero/Hero";
@@ -9,21 +9,17 @@ import Footer from "../../components/footer/Footer";
 /* import SliderRunline from '../../components/sliderRunline/SliderRunline'; */
 
 export default function Meet() {
+  const [width, setWidth] = useState(window.innerWidth);
   return (
     <>
       <Header full={false} transparent={false}></Header>
-      <Hero
-        full={false}
-        location="Worldwide/service/ for /vip/ in airports"
-        image="../images/countries/israel/TelAviv/1.1TelAviv.jpg"
-        isButtonExist={true}
-      ></Hero>
-      <Description
+      <Hero full={false} location="Worldwide/service/ for /vip/ in airports" image="../images/countries/israel/TelAviv/1.1TelAviv.jpg" isButtonExist={true}></Hero>
+      {/*       <Description
         title="Unlocking Your /israel/ Visa with /first class/"
         text="Continue your travel plans to Israel with our visa assistance services. We provide comprehensive support throughout the visa application process, ensuring simplicity and efficiency in obtaining your Israel visa. 
 Our team of experienced specialists is ready to assist you with all necessary documentation, advise on requirements, and provide support for any visa-related queries."
-      />
-      <SliderRunline
+      /> */}
+      {/* <SliderRunline
         slides={[
           {
             display: "full",
@@ -145,9 +141,9 @@ Our team of experienced specialists is ready to assist you with all necessary do
             isInstructionExist: false,
           },
         ]}
-      ></SliderRunline>
-      <Runline text={"/Luxury/ Arrivals & Departures"}></Runline>
-      <Hotels
+      ></SliderRunline> */}
+      {/* <Runline text={"/Luxury/ Arrivals & Departures"}></Runline> */}
+      {/* <Hotels
         title="choose /Our HOTELS/"
         slides={[
           {
@@ -250,8 +246,8 @@ Our team of experienced specialists is ready to assist you with all necessary do
           },
         ]}
         title="/Israel’s/ Vibrant Events"
-      ></SliderBig>
-      <Runline text={"Discover other incredible worlds with /first class/"}></Runline>
+      ></SliderBig> */}
+      {/*       <Runline text={"Discover other incredible worlds with /first class/"}></Runline>
       <Circle
         title=""
         full={false}
@@ -264,7 +260,7 @@ Our team of experienced specialists is ready to assist you with all necessary do
           6: ["Jerusalem", "Israel", "./images/circle/points/jerusalem.svg", "../images/countries/israel/JerusalemIsr7.5.jpg"],
         }}
       ></Circle>
-      <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline>
+      <Runline text={"/Dear Ladies &/ Gentlemens we will turn your journey  into a true work of art"}></Runline> */}
       <Footer width={width} color="#9e6639" image="../images/countries/israel/footer8.1.jpg" />
     </>
   );

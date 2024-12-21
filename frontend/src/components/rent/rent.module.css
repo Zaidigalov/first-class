@@ -33,6 +33,20 @@
 	cursor: grab;
 }
 
+.slider-background ul {
+	bottom: 20px;
+}
+
+.slider-background li button:before {
+	font-size: 20px !important;
+	color: white !important;
+	opacity: 0.5 !important;
+}
+
+.slider-background li:global(.slick-active) button:before {
+	opacity: 1 !important;
+}
+
 .background {
 	position: relative;
 	width: 100%;

@@ -3,7 +3,6 @@ import styles from "./sliderCardSmall.module.css";
 import { Link } from "react-router-dom";
 
 export default function SliderCardSmall({ title, link, image }) {
-  /* console.log(link); */
   return (
     <div className={`${styles.card} slider-small__card`}>
       <div className={styles.container}>

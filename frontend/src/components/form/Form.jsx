@@ -3,8 +3,10 @@ import styles from "./form.module.css";
 import { countriesEN, countriesRU } from "./country-list_en";
 import Runline from "../runline/Runline";
 import { path } from "../../path";
+import { Link } from "react-router-dom";
 
 export default function Form({ closeOverlay }) {
+  const [buttonText, setButtonText] = useState("Let’s journey!");
   const [data, setData] = useState({
     client_name: "",
     company: "",
@@ -12,7 +14,6 @@ export default function Form({ closeOverlay }) {
     email: "",
     service: "",
     country: "",
-    attach: "",
     comments: "",
   });
 
@@ -23,9 +24,10 @@ export default function Form({ closeOverlay }) {
     email: "",
     service: "",
     country: "",
-    attach: "",
     comments: "",
   });
+
+  const services = ["Hotel Booking", "Flight Tickets", "Jet Rental", "Challet Rental", "Villa Rental", "Yacht Rental", "Visa Support", "Corporate", "Cruises", "VIP IN Airports"];
 
   const handleChange = ({ currentTarget: input }) => {
     let newData = { ...data };
@@ -33,24 +35,42 @@ export default function Form({ closeOverlay }) {
     setData(newData);
   };
 
-  const handleImageChange = (event) => {
-    let newData = { ...data };
-    newData["attach"] = event.target.files[0];
-    setData(newData);
-  };
-
-  const doSubmit = async (event) => {
-    consloleData(event);
-    event.preventDefault();
-    /* const response = await API.createListing(data);
-		if (response.status === 400) {
-			setErrors(response.data);
-		} */
-  };
-
-  function consloleData(e) {
+  async function doSubmit(e) {
     e.preventDefault();
-    console.log(data);
+
+    try {
+      const response = await fetch(`${path}feedback/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        /*console.log(result);*/
+        setData({
+          client_name: "",
+          company: "",
+          phone: "",
+          email: "",
+          service: "",
+          country: "",
+          comments: "",
+        });
+        setButtonText("Sent");
+
+        setTimeout(() => {
+          closeOverlay();
+          setButtonText("Let’s journey!");
+        }, 1500);
+      } else {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -66,15 +86,15 @@ export default function Form({ closeOverlay }) {
         <div className={styles["inner-container"]}>
           <form action="" className={styles.form} onSubmit={(e) => doSubmit(e)}>
             <div className={styles.field}>
-              <label htmlFor="client_name" className={styles.label}>
-                Name & Surname
-              </label>
+              {/*               <label htmlFor="client_name" className={styles.label}>
+                full name
+              </label> */}
               <input
                 className={`${styles.input}`}
                 id="client_name"
                 name="client_name"
                 type="text"
-                placeholder=""
+                placeholder="full name"
                 required
                 value={data.client_name}
                 onChange={(e) => {
@@ -84,15 +104,15 @@ export default function Form({ closeOverlay }) {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="company" className={styles.label}>
-                Company Name
-              </label>
+              {/*               <label htmlFor="company" className={styles.label}>
+                Company
+              </label> */}
               <input
                 className={`${styles.input}`}
                 id="company"
                 name="company"
                 type="text"
-                placeholder=""
+                placeholder="Company"
                 required={true}
                 value={data.company}
                 onChange={(e) => {
@@ -102,15 +122,15 @@ export default function Form({ closeOverlay }) {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="phone" className={styles.label}>
+              {/*               <label htmlFor="phone" className={styles.label}>
                 Phone Number
-              </label>
+              </label> */}
               <input
                 className={`${styles.input}`}
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder=""
+                placeholder="Phone Number"
                 required={true}
                 value={data.phone}
                 onChange={(e) => {
@@ -120,15 +140,15 @@ export default function Form({ closeOverlay }) {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="email" className={styles.label}>
-                E-mail Address
-              </label>
+              {/*               <label htmlFor="email" className={styles.label}>
+                Email
+              </label> */}
               <input
                 className={`${styles.input}`}
                 id="email"
                 name="email"
                 type="email"
-                placeholder=""
+                placeholder="Email"
                 required={true}
                 value={data.email}
                 onChange={(e) => {
@@ -138,29 +158,37 @@ export default function Form({ closeOverlay }) {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="service" className={styles.label}>
-                Choose Service
-              </label>
+              {/*               <label htmlFor="service" className={styles.label}>
+                Select Service
+              </label> */}
               <select
                 className={`${styles.input}`}
                 id="service"
                 name="service"
+                placeholder="Select Service"
                 required={false}
                 value={data.service}
                 onChange={(e) => {
                   handleChange(e);
                 }}
-              ></select>
+              >
+                {services.map((srvice, index) => (
+                  <option key={index} value={srvice}>
+                    {srvice}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="country" className={styles.label}>
-                Choose Country
-              </label>
+              {/*               <label htmlFor="country" className={styles.label}>
+                Select Country
+              </label> */}
               <select
                 className={`${styles.input}`}
                 id="country"
                 name="country"
+                placeholder="Select Country"
                 required={true}
                 value={data.country}
                 onChange={(e) => {
@@ -175,30 +203,15 @@ export default function Form({ closeOverlay }) {
               </select>
             </div>
 
-            <div className={`${styles.field} ${styles["field-attach"]}`}>
-              <label htmlFor="attach" className={styles.label}>
-                Attach File
-              </label>
-              <input
-                className={`${styles.input} ${styles["input-attach"]}`}
-                id="attach"
-                name="attach"
-                type="file"
-                required={false}
-                onChange={(e) => {
-                  handleImageChange(e);
-                }}
-              />
-            </div>
-
             <div className={`${styles.field} ${styles["field-comment"]}`}>
-              <label htmlFor="comments" className={styles.label}>
+              {/*               <label htmlFor="comments" className={styles.label}>
                 Kindly provide us with your important details to ensure we tailor your ideal journey
-              </label>
+              </label> */}
               <textarea
                 className={`${styles.input} ${styles["input-comment"]}`}
                 id="comments"
                 name="comments"
+                placeholder="message"
                 required={false}
                 value={data.comments}
                 onChange={(e) => {
@@ -220,13 +233,13 @@ export default function Form({ closeOverlay }) {
                 }}
               />
               <label htmlFor="checkbox" className={styles.label}>
-                I agree with the <a href="">privacy policy</a>{" "}
+                I agree with the <Link to="/privacy-policy">privacy policy</Link>{" "}
               </label>
             </div>
 
             <button className={styles.invitation} type="submit">
-              <p>Let’s journey!</p>
-              <img src="./images/icons/Airplane.svg" alt="" />
+              <p>{buttonText}</p>
+              <img src="../images/icons/Airplane.svg" alt="" />
             </button>
           </form>
         </div>

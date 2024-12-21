@@ -31,10 +31,7 @@ export default function Hotels({ title, data }) {
         }
       }
       // Проверяем, является ли свойство строкой и содержит ли ее искомую строку, игнорируя регистр
-      if (
-        typeof obj[key] === "string" &&
-        obj[key].toLowerCase().includes(str)
-      ) {
+      if (typeof obj[key] === "string" && obj[key].toLowerCase().includes(str)) {
         return true;
       }
     }
@@ -48,7 +45,6 @@ export default function Hotels({ title, data }) {
   }, [slides]);
 
   const renderSliders = () => {
-    /* console.log(slidersQuantity) */
     if (slidersQuantity === 0) {
       return (
         <div className={`${styles.empty}`}>
@@ -67,13 +63,7 @@ export default function Hotels({ title, data }) {
     }
 
     if (slidersQuantity === 2) {
-      return splitArray(slides).map((slider) => (
-        <SliderSmall
-          key={slider[0]?.id || Math.random()}
-          slides={slider}
-          targetLink="/hotel"
-        />
-      ));
+      return splitArray(slides).map((slider) => <SliderSmall key={slider[0]?.id || Math.random()} slides={slider} targetLink="/hotel" />);
     }
 
     return null; // Для случаев, когда не соответствует ни одно условие
@@ -81,18 +71,8 @@ export default function Hotels({ title, data }) {
 
   return (
     <section className={styles.hotels}>
-      {title && (
-        <h2
-          className={`${styles.title} title`}
-          dangerouslySetInnerHTML={{ __html: cursivingText(title) }}
-        ></h2>
-      )}
-      <Searchbar
-        title=""
-        isInputExist={true}
-        tags={["Family", "Business"]}
-        onSearch={onSearchHandler}
-      ></Searchbar>
+      {title && <h2 className={`${styles.title} title`} dangerouslySetInnerHTML={{ __html: cursivingText(title) }}></h2>}
+      <Searchbar title="" isInputExist={true} tags={["Family", "Business"]} onSearch={onSearchHandler}></Searchbar>
       {renderSliders()}
     </section>
   );

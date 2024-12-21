@@ -45,9 +45,7 @@ export default function SliderMain({ slides, title, width }) {
     },
   };
 
-  useEffect(() => {
-    console.log(sliding);
-  }, [sliding]);
+  useEffect(() => {}, [sliding]);
 
   useEffect(() => {
     if (!isSliderItited) return;
@@ -63,13 +61,6 @@ export default function SliderMain({ slides, title, width }) {
     if (!allSlides || !slider) return;
     setCards(slider.querySelectorAll('[class*="card"]'));
   }, [allSlides, slider]);
-
-  /* useEffect(() => {
-		if (!cards) return
-		cards.forEach(card => {
-			card.classList.add(styles.card)
-		})
-	}, [cards]) */
 
   useEffect(() => {
     if (!allSlides) return;
@@ -89,7 +80,6 @@ export default function SliderMain({ slides, title, width }) {
     const handleMouseOver = (card) => (e) => {
       if (sliding) return;
       else {
-        console.log(sliding);
         const classes = Array.from(card.classList);
         if (classes.includes(`${styles["active-card"]}`)) return;
 
@@ -175,7 +165,7 @@ export default function SliderMain({ slides, title, width }) {
     return (
       <div className={`${styles["slick-arrow"]} ${styles["slick-next"]}`} onClick={onClick}>
         <svg>
-          <use href="./images/icons/arrows.svg#arrow-right"></use>
+          <use href="../images/icons/arrows.svg#arrow-right"></use>
         </svg>
       </div>
     );
@@ -186,7 +176,7 @@ export default function SliderMain({ slides, title, width }) {
     return (
       <div className={`${styles["slick-arrow"]} ${styles["slick-prev"]}`} onClick={onClick}>
         <svg>
-          <use href="./images/icons/arrows.svg#arrow-right"></use>
+          <use href="../images/icons/arrows.svg#arrow-right"></use>
         </svg>
       </div>
     );

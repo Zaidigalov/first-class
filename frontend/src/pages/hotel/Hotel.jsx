@@ -26,7 +26,7 @@ export default function Hotel() {
         if (response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
+          /*console.log(result);*/
         } else {
           throw new Error("Network response was not ok");
         }

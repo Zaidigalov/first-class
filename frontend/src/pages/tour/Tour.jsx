@@ -6,13 +6,14 @@ import Header from "../../components/header/Header";
 import Map from "../../components/map/Map";
 import Footer from "../../components/footer/Footer";
 import SliderBig from "../../components/sliderBig/SliderBig";
+import Loader from "../../components/loader/Loader";
 
 import addNobr from "../../functions/addNobr";
 
 import mock from "../../MOCK/tour";
-import { path, state } from "../../path";
+import { path, isMOCKData } from "../../path";
 let newState;
-if (state) newState = mock;
+if (isMOCKData) newState = mock;
 else newState = null;
 
 export default function Tour() {
@@ -35,7 +36,7 @@ export default function Tour() {
         if (response.ok) {
           const result = await response.json();
           setData(result);
-          console.log(result);
+          /*console.log(result);*/
         } else {
           throw new Error("Network response was not ok");
         }
@@ -48,11 +49,10 @@ export default function Tour() {
 
   return (
     <>
-      <Header full={false} transparent={false} width={width} />
-
-      {data && (
+      {data ? (
         <>
-          <Map image={data.image} title={data.translations.en.name} map={data.map}></Map>
+          <Header full={false} transparent={false} width={width} />
+          <Map image={data.image} title={data.translations.en.name} map={data.map_url}></Map>
           {data.days.map((item, index) => (
             <div key={index}>
               <div className={styles.shedule}>
@@ -66,6 +66,8 @@ export default function Tour() {
 
           <Footer width={width} color={data.color_footer} image={data.image_footer} />
         </>
+      ) : (
+        <Loader />
       )}
     </>
   );

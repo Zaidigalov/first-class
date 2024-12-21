@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./cities.module.css";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SliderStringsCard from "../sliderStrings/SliderStringsCard";
 
+import SliderStringsCard from "../sliderStrings/SliderStringsCard";
 import "../sliderStrings/sliderString.css";
-import { Link } from "react-router-dom";
 
 export default function Cities({ slides, target }) {
   const settingsSlides = {
@@ -33,8 +34,7 @@ export default function Cities({ slides, target }) {
     fade: true,
     arrows: false,
     touchThreshold: 100,
-    /* autoplay: true,
-		autoplaySpeed: 5000, */
+    dots: true,
   };
 
   const [nav1, setNav1] = useState(null);

@@ -30,22 +30,6 @@
 	margin-right: 70px;
 }
 
-.close-slice {
-	position: absolute;
-	width: 22px;
-	height: 3px;
-	border-radius: 3px;
-	background-color: black;
-}
-
-.close-left {
-	transform: rotate(-45deg);
-}
-
-.close-right {
-	transform: rotate(45deg);
-}
-
 .form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -69,34 +53,22 @@
 }
 
 .input {
-	height: 25px;
+	/* height: 25px; */
+	padding-bottom: 10px;
+	border: none;
 	border-bottom: 1px solid #e0e0e0;
 	font-size: clamp(0.875rem, 0.8124rem + 0.3130vw, 1.188rem);
 	outline: none;
 }
 
-.field-attach {
-	padding-bottom: 25px;
-	border-bottom: 1px solid #e0e0e0;
+.input::placeholder {
+	text-transform: uppercase;
+	color: inherit;
+	transition: opacity 0.15s;
 }
 
-.field-attach .label {
-	margin-left: 30px;
-	position: relative;
-}
-
-.field-attach .label::before {
-	position: absolute;
-	content: '';
-	left: -30px;
-	display: block;
-	width: 20px;
-	height: 30px;
-	background: url(./images/icons/paper-clip.svg) no-repeat;
-}
-
-.input-attach {
-	display: none;
+.input:focus::placeholder {
+	opacity: 0;
 }
 
 .field-comment {
@@ -155,6 +127,11 @@
 	border-color: black;
 	background-color: black;
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+option,
+select {
+	text-transform: uppercase;
 }
 
 .invitation {

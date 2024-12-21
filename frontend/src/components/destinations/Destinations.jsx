@@ -13,8 +13,6 @@ export default function Destinations({ title, isInputExist, tags, destinations }
   const [data, setData] = useState(destinations);
   const [width, setWidth] = useState(window.innerWidth);
 
-  console.log(destinations);
-
   const settings = {
     className: `${styles.slider}`,
     /* variableWidth: true, */
@@ -132,7 +130,7 @@ export default function Destinations({ title, isInputExist, tags, destinations }
 
   function findObjectsContainingString(arr, str) {
     const result = arr.filter((obj) => containsString(obj, str.toLowerCase()));
-    console.log(result);
+    /*console.log(result);*/
     setData(result);
   }
 
@@ -158,7 +156,6 @@ export default function Destinations({ title, isInputExist, tags, destinations }
       return (
         <Slider {...settings}>
           {data.map((destination, index) => {
-            /* console.log(destination); */
             return (
               <Destination
                 key={index}

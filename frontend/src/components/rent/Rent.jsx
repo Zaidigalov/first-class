@@ -61,6 +61,7 @@ export default function Rent({ slides, mb }) {
     arrows: false,
     mousewheel: true,
     touchThreshold: 10,
+    dots: true,
   };
 
   return (
